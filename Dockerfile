@@ -1,2 +1,11 @@
 FROM nginx:alpine
-COPY . /usr/share/nginx/html
+
+# Nginx konfig template másolás
+COPY nginx.conf.template /etc/nginx/templates/default.conf.template
+
+# Statikus fájlok másolása
+COPY index.html /usr/share/nginx/html/
+COPY dr-berenyi-kristof.png /usr/share/nginx/html/
+
+# Expose a Railway-féle dinamikus port
+EXPOSE $PORT
