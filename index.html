@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="hu" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Berényi Kristóf Ügyvédi Iroda</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts: Playfair Display (Elegancia) & Manrope (Modernitás) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'paper': '#F3F2EE', // Studio Aeden stílusú törtfehér
+                        'ink': '#1A1A1A',   // Majdnem fekete
+                        'accent': '#C5A075', // Prémium homok/arany árnyalat
+                        'stone-dark': '#2C2C2C'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                    },
+                    animation: {
+                        'slow-spin': 'spin 12s linear infinite',
+                        'marquee': 'marquee 30s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Egyedi görgetősáv */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #F3F2EE;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #d1d1d1;
+            border-radius: 4px;
+        }
+
+        /* Kurzor effekt */
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #1A1A1A;
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(26, 26, 26, 0.5);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+
+        body:hover .cursor-outline.hovered {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(197, 160, 117, 0.1);
+            border-color: transparent;
+        }
+
+        /* Reveal animáció */
+        .reveal-text {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-text.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .line-clamp {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Kép hover effektek */
+        .img-hover-container {
+            overflow: hidden;
+        }
+
+        .img-hover-zoom {
+            transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .img-hover-container:hover .img-hover-zoom {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="bg-paper text-ink font-sans antialiased selection:bg-accent selection:text-white overflow-x-hidden">
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot hidden md:block"></div>
+    <div class="cursor-outline hidden md:block"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 px-6 py-6 md:px-12 md:py-8 flex justify-between items-center mix-blend-difference text-white md:mix-blend-normal md:text-ink transition-colors duration-300"
+        id="navbar">
+        <a href="#" class="text-xl md:text-2xl font-serif font-bold tracking-tighter hover-trigger z-50 uppercase">
+            Dr. Berényi Kristóf.
+        </a>
+
+        <div class="hidden md:flex gap-12 text-sm font-semibold tracking-widest uppercase">
+            <a href="#about" class="hover:text-accent transition-colors hover-trigger">Bemutatkozás</a>
+            <a href="#expertise" class="hover:text-accent transition-colors hover-trigger">Szakterületek</a>
+            <a href="#contact" class="hover:text-accent transition-colors hover-trigger">Kapcsolat</a>
+        </div>
+
+        <button class="md:hidden z-50 text-ink">
+            <i data-lucide="menu" class="w-8 h-8"></i>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex flex-col justify-end pb-20 px-6 md:px-12 pt-32">
+        <div class="absolute top-0 right-0 w-full h-full md:w-1/2 z-0 opacity-10 md:opacity-100">
+            <!-- Absztrakt háttérkép -->
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2301&auto=format&fit=crop"
+                alt="Modern Architecture"
+                class="w-full h-full object-cover object-center grayscale contrast-125 brightness-110">
+        </div>
+
+        <div class="relative z-10 max-w-4xl">
+            <p class="text-accent uppercase tracking-[0.2em] text-sm mb-6 reveal-text" style="transition-delay: 0.1s;">
+                Fuvarozási Jog & Munkajog</p>
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl leading-[0.9] mb-8 reveal-text"
+                style="transition-delay: 0.2s;">
+                Generációk tudása.<br>
+                <span class="italic text-stone-dark">Modern lendület.</span>
+            </h1>
+            <p class="text-lg md:text-xl max-w-lg leading-relaxed text-gray-600 reveal-text"
+                style="transition-delay: 0.3s;">
+                Harmadik generációs jogászként célom az örökség továbbvitele a mai kor kihívásaihoz igazodva. Stratégiai
+                partnerség magyar, angol és francia nyelven.
+            </p>
+
+            <div class="mt-12 reveal-text" style="transition-delay: 0.4s;">
+                <a href="#contact"
+                    class="group inline-flex items-center gap-4 text-sm font-bold uppercase tracking-widest hover-trigger">
+                    <span
+                        class="border-b border-ink pb-1 group-hover:border-accent group-hover:text-accent transition-all duration-300">Konzultáció
+                        kérése</span>
+                    <i data-lucide="arrow-down-right"
+                        class="w-5 h-5 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-300"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Marquee Text -->
+    <div class="w-full overflow-hidden border-y border-ink/10 py-6 bg-white">
+        <div class="whitespace-nowrap animate-marquee flex gap-12 items-center">
+            <span class="text-4xl md:text-6xl font-serif italic text-ink">Munkajog</span>
+            <span class="text-xl md:text-3xl font-sans font-bold text-accent">•</span>
+            <span class="text-4xl md:text-6xl font-serif italic text-gray-300">Fuvarozási Jog</span>
+            <span class="text-xl md:text-3xl font-sans font-bold text-accent">•</span>
+            <span class="text-4xl md:text-6xl font-serif italic text-ink">Ingatlanjog</span>
+            <span class="text-xl md:text-3xl font-sans font-bold text-accent">•</span>
+            <span class="text-4xl md:text-6xl font-serif italic text-gray-300">Társasági Jog</span>
+            <span class="text-xl md:text-3xl font-sans font-bold text-accent">•</span>
+            <span class="text-4xl md:text-6xl font-serif italic text-ink">Peres Képviselet</span>
+            <span class="text-xl md:text-3xl font-sans font-bold text-accent">•</span>
+            <span class="text-4xl md:text-6xl font-serif italic text-gray-300">Követeléskezelés</span>
+            <span class="text-xl md:text-3xl font-sans font-bold text-accent">•</span>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 md:py-32 px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+        <div class="md:col-span-5 reveal-text sticky top-32">
+            <div class="w-full aspect-[3/4] img-hover-container relative bg-gray-200">
+                <!-- Itt cseréltem le a placeholder képet a felhasználó által feltöltöttre -->
+                <!-- Ha a kép nem jelenik meg, ellenőrizd, hogy a 'image_c61b75.jpg' ugyanabban a mappában van-e -->
+                <img src="dr-berenyi-kristof.png" alt="Dr. Berényi Kristóf"
+                    class="w-full h-full object-cover object-top img-hover-zoom grayscale hover:grayscale-0 transition-all duration-700">
+                <div class="absolute bottom-4 left-4 bg-paper px-4 py-2 text-xs font-bold uppercase tracking-widest">Dr.
+                    Berényi Kristóf</div>
+            </div>
+
+            <div class="mt-8 flex gap-4 text-sm font-bold uppercase tracking-widest text-gray-500">
+                <span>HU</span>
+                <span class="text-accent">•</span>
+                <span>EN</span>
+                <span class="text-accent">•</span>
+                <span>FR</span>
+            </div>
+        </div>
+
+        <div class="md:col-span-7 md:pl-12">
+            <h2 class="font-serif text-4xl md:text-5xl mb-8 leading-tight reveal-text">
+                "Egy ügyvédnek a jog valamennyi területén otthonosan kell mozognia."
+            </h2>
+
+            <div class="space-y-6 text-gray-600 leading-relaxed reveal-text text-lg">
+                <p>
+                    Tudatosan készültem az ügyvédi pályára. Már a jogi egyetem alatt gyakornokként dolgoztam egy főként
+                    büntetőjoggal és idegenrendészeti eljárásokkal foglalkozó ügyvédi irodában.
+                </p>
+                <p>
+                    Az egyetem elvégzése után az ügyvédjelölti időszakom döntő részében egy vegyes praxisú irodában
+                    szereztem tapasztalatot, amely kiemelten foglalkozik fuvarozási joggal és munkajoggal. Ez a
+                    széleskörű gyakorlati tudás tette lehetővé, hogy önálló praxist indítsak.
+                </p>
+                <p>
+                    Harmadik generációs jogászként célom, hogy a korábbi generációk örökségét vigyem tovább. Vallom,
+                    hogy bár vannak kiemelt szakterületeim, az ügyfél érdeke azt kívánja, hogy az összefüggéseket látva,
+                    széles körben tudjak jogi segítséget nyújtani – legyen szó akár egy komplex cégjogi átalakulásról,
+                    akár egy magánszemély ingatlanügyletéről.
+                </p>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-ink/10 grid grid-cols-2 md:grid-cols-3 gap-8 reveal-text">
+                <div>
+                    <h4 class="font-serif text-xl mb-2">Szakértelem</h4>
+                    <p class="text-sm text-gray-500">Munkajog & Fuvarozás</p>
+                </div>
+                <div>
+                    <h4 class="font-serif text-xl mb-2">Megközelítés</h4>
+                    <p class="text-sm text-gray-500">Gyakorlatias & Stratégiai</p>
+                </div>
+                <div>
+                    <h4 class="font-serif text-xl mb-2">Nyelvek</h4>
+                    <p class="text-sm text-gray-500">Angol & Francia tárgyalóképes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section id="expertise" class="bg-ink text-paper py-24 px-6 md:px-12">
+        <div class="mb-16 reveal-text">
+            <span class="text-accent text-sm font-bold uppercase tracking-widest block mb-4">Praxis</span>
+            <h2 class="font-serif text-5xl md:text-6xl text-white">Kiemelt Szakterületek</h2>
+        </div>
+
+        <!-- Featured Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-1 mb-1">
+            <!-- Munkajog -->
+            <div
+                class="group relative bg-stone-dark p-8 md:p-12 min-h-[400px] flex flex-col justify-between hover:bg-accent transition-colors duration-500 hover-trigger reveal-text">
+                <div class="flex justify-between items-start z-10">
+                    <i data-lucide="briefcase" class="w-10 h-10 text-white/80"></i>
+                    <span
+                        class="text-xs font-bold uppercase border border-white/20 px-3 py-1 rounded-full">Kiemelt</span>
+                </div>
+                <div class="z-10 relative">
+                    <h3 class="font-serif text-3xl md:text-4xl mb-4 text-white">Munkajog</h3>
+                    <p class="text-gray-400 group-hover:text-ink transition-colors max-w-md">
+                        Munkavállalók és munkáltatók teljeskörű jogi képviselete. Munkaszerződések, felmondások,
+                        versenytilalmi megállapodások és munkaügyi perek.
+                    </p>
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+            </div>
+
+            <!-- Fuvarozási jog -->
+            <div class="group relative bg-stone-dark p-8 md:p-12 min-h-[400px] flex flex-col justify-between hover:bg-accent transition-colors duration-500 hover-trigger reveal-text"
+                style="transition-delay: 0.1s;">
+                <div class="flex justify-between items-start z-10">
+                    <i data-lucide="truck" class="w-10 h-10 text-white/80"></i>
+                    <span
+                        class="text-xs font-bold uppercase border border-white/20 px-3 py-1 rounded-full">Kiemelt</span>
+                </div>
+                <div class="z-10 relative">
+                    <h3 class="font-serif text-3xl md:text-4xl mb-4 text-white">Fuvarozási jog</h3>
+                    <p class="text-gray-400 group-hover:text-ink transition-colors max-w-md">
+                        Közúti árufuvarozás és szállítmányozás specifikus jogi kérdései. Szerződések, ÁSZF-ek
+                        szerkesztése és kárügyek kezelése.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Secondary Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
+            <!-- Ingatlanjog -->
+            <div
+                class="group bg-stone-dark p-8 hover:bg-stone-dark/80 transition-colors reveal-text border-t border-white/5">
+                <h3 class="font-serif text-2xl mb-3 text-white">Ingatlanjog</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Adásvétel, ajándékozás, CSOK és hitelügyletek, társasházi alapítás, szolgalmi jogok és újépítésű
+                    projektek jogi támogatása.
+                </p>
+            </div>
+
+            <!-- Társasági jog -->
+            <div class="group bg-stone-dark p-8 hover:bg-stone-dark/80 transition-colors reveal-text border-t border-white/5"
+                style="transition-delay: 0.1s;">
+                <h3 class="font-serif text-2xl mb-3 text-white">Társasági jog</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Cégalapítás (Kft, Bt, Zrt), változásbejegyzés, tőkeemelés, üzletrész adásvétel és végelszámolás.
+                </p>
+            </div>
+
+            <!-- Egyéb területek -->
+            <div class="group bg-stone-dark p-8 hover:bg-stone-dark/80 transition-colors reveal-text border-t border-white/5"
+                style="transition-delay: 0.2s;">
+                <h3 class="font-serif text-2xl mb-3 text-white">Egyéb területek</h3>
+                <ul class="text-sm text-gray-400 space-y-2">
+                    <li class="flex items-center gap-2">
+                        <div class="w-1 h-1 bg-accent rounded-full"></div>Követeléskezelés & Végrehajtás
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <div class="w-1 h-1 bg-accent rounded-full"></div>GDPR megfelelés
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <div class="w-1 h-1 bg-accent rounded-full"></div>Büntetőjogi védelem
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <footer id="contact" class="bg-paper relative pt-20 pb-12 px-6 md:px-12 border-t border-ink/10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-32">
+            <div class="reveal-text">
+                <h2 class="font-serif text-5xl md:text-6xl mb-8">Kapcsolat</h2>
+                <p class="text-lg text-gray-600 mb-12">
+                    Küldjön üzenetet és rövidesen válaszolok! Az ügyvéd-ügyfél kapcsolat bizalmi viszony, így minden
+                    megkeresést diszkréten kezelek.
+                </p>
+
+                <div class="space-y-8">
+                    <!-- Contact Info -->
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Elérhetőségek</p>
+                        <a href="mailto:kristof@berenyi-law.hu"
+                            class="block text-2xl font-serif hover:text-accent transition-colors hover-trigger mb-2">
+                            kristof@berenyi-law.hu
+                        </a>
+                        <a href="tel:+36307012405"
+                            class="block text-xl font-sans text-ink hover:text-accent transition-colors hover-trigger">
+                            +36 (30) 701 2405
+                        </a>
+                    </div>
+
+                    <!-- Address -->
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Iroda</p>
+                        <p class="text-lg text-ink leading-relaxed">
+                            1117 Budapest,<br>
+                            Hamzsabégi út 15. 5/1.
+                        </p>
+                    </div>
+
+                    <!-- Directions Info Box -->
+                    <div class="bg-white p-6 border border-ink/5 text-sm space-y-4">
+                        <div>
+                            <strong class="block font-serif text-lg mb-1">Megközelítés</strong>
+                            <p class="text-gray-500">
+                                <span class="font-bold">Tömegközlekedés:</span> M4 metró, 4, 6, 17, 41, 47, 56
+                                villamosok (Újbuda-központ / Móricz Zs. körtér / Etele út).
+                            </p>
+                            <p class="text-gray-500 mt-2">
+                                <span class="font-bold">Autóval:</span> Petőfi híd vagy Rákóczi híd felől pesti
+                                oldalról, Fehérvári út vagy Budafoki út budai oldalról.
+                            </p>
+                        </div>
+                        <div class="border-t border-gray-100 pt-3">
+                            <strong class="block font-serif text-lg mb-1">Parkolás</strong>
+                            <p class="text-gray-500">
+                                Utcai fizetős övezet (H-P 08-18h, kód: <span class="font-bold text-ink">3114</span>),
+                                vagy az Allee Bevásárlóközpont parkolója.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="bg-white p-8 md:p-12 shadow-2xl shadow-gray-200/50 reveal-text h-fit"
+                style="transition-delay: 0.2s;">
+                <form
+                    onsubmit="event.preventDefault(); alert('Köszönjük megkeresését! Hamarosan felvesszük Önnel a kapcsolatot.');"
+                    class="space-y-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest mb-2 text-gray-500">Név</label>
+                        <input type="text"
+                            class="w-full bg-paper border-b border-gray-300 p-3 focus:outline-none focus:border-accent transition-colors"
+                            placeholder="Az Ön neve">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest mb-2 text-gray-500">Email
+                            cím</label>
+                        <input type="email"
+                            class="w-full bg-paper border-b border-gray-300 p-3 focus:outline-none focus:border-accent transition-colors"
+                            placeholder="email@pelda.hu">
+                    </div>
+                    <div>
+                        <label
+                            class="block text-xs font-bold uppercase tracking-widest mb-2 text-gray-500">Telefon</label>
+                        <input type="tel"
+                            class="w-full bg-paper border-b border-gray-300 p-3 focus:outline-none focus:border-accent transition-colors"
+                            placeholder="+36...">
+                    </div>
+                    <div>
+                        <label
+                            class="block text-xs font-bold uppercase tracking-widest mb-2 text-gray-500">Üzenet</label>
+                        <textarea rows="4"
+                            class="w-full bg-paper border-b border-gray-300 p-3 focus:outline-none focus:border-accent transition-colors"
+                            placeholder="Miben segíthetek?"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-ink text-white py-4 px-8 uppercase tracking-widest text-xs font-bold hover:bg-accent transition-colors duration-300 hover-trigger">
+                        Üzenet küldése
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div
+            class="flex flex-col md:flex-row justify-between items-end mt-24 pt-8 border-t border-ink/10 text-xs text-gray-400 uppercase tracking-widest">
+            <p>&copy; 2024 Dr. Berényi Kristóf Ügyvédi Iroda.</p>
+            <div class="flex gap-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-ink transition-colors">Adatvédelmi tájékoztató</a>
+                <a href="#" class="hover:text-ink transition-colors">Impresszum</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lucide icons initialization
+        lucide.createIcons();
+
+        // Custom Cursor Logic
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+        const hoverTriggers = document.querySelectorAll('.hover-trigger');
+
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            // Dot follows instantly
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+            // Outline follows with slight delay
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
+
+        // Add hover effect to interactive elements
+        hoverTriggers.forEach(trigger => {
+            trigger.addEventListener('mouseenter', () => {
+                cursorOutline.classList.add('hovered');
+            });
+            trigger.addEventListener('mouseleave', () => {
+                cursorOutline.classList.remove('hovered');
+            });
+        });
+
+        // Intersection Observer for Scroll Reveals
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-text').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-paper/90', 'backdrop-blur-sm', 'shadow-sm');
+                nav.classList.remove('py-8');
+                nav.classList.add('py-4');
+            } else {
+                nav.classList.remove('bg-paper/90', 'backdrop-blur-sm', 'shadow-sm');
+                nav.classList.add('py-8');
+                nav.classList.remove('py-4');
+            }
+        });
+    </script>
+</body>
+
+</html>
