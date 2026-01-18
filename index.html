@@ -40,7 +40,7 @@
                     keyframes: {
                         marquee: {
                             '0%': { transform: 'translateX(0%)' },
-                            '100%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(-50%)' },
                         }
                     }
                 }
@@ -191,19 +191,37 @@
 
     <!-- Marquee Text -->
     <div class="w-full overflow-hidden border-y border-ink/10 py-6 bg-white">
-        <div class="whitespace-nowrap animate-marquee flex gap-12 items-center">
-            <span class="text-4xl md:text-6xl font-serif italic text-ink">Munkajog</span>
-            <span class="text-xl md:text-3xl font-sans font-bold text-accent">•</span>
-            <span class="text-4xl md:text-6xl font-serif italic text-gray-300">Fuvarozási Jog</span>
-            <span class="text-xl md:text-3xl font-sans font-bold text-accent">•</span>
-            <span class="text-4xl md:text-6xl font-serif italic text-ink">Ingatlanjog</span>
-            <span class="text-xl md:text-3xl font-sans font-bold text-accent">•</span>
-            <span class="text-4xl md:text-6xl font-serif italic text-gray-300">Társasági Jog</span>
-            <span class="text-xl md:text-3xl font-sans font-bold text-accent">•</span>
-            <span class="text-4xl md:text-6xl font-serif italic text-ink">Peres Képviselet</span>
-            <span class="text-xl md:text-3xl font-sans font-bold text-accent">•</span>
-            <span class="text-4xl md:text-6xl font-serif italic text-gray-300">Követeléskezelés</span>
-            <span class="text-xl md:text-3xl font-sans font-bold text-accent">•</span>
+        <div class="flex animate-marquee">
+            <!-- Első kör -->
+            <div class="whitespace-nowrap flex gap-12 items-center shrink-0">
+                <span class="text-4xl md:text-6xl font-serif italic text-ink">Munkajog</span>
+                <span class="text-xl md:text-3xl font-sans font-bold text-accent">•</span>
+                <span class="text-4xl md:text-6xl font-serif italic text-gray-300">Fuvarozási Jog</span>
+                <span class="text-xl md:text-3xl font-sans font-bold text-accent">•</span>
+                <span class="text-4xl md:text-6xl font-serif italic text-ink">Ingatlanjog</span>
+                <span class="text-xl md:text-3xl font-sans font-bold text-accent">•</span>
+                <span class="text-4xl md:text-6xl font-serif italic text-gray-300">Társasági Jog</span>
+                <span class="text-xl md:text-3xl font-sans font-bold text-accent">•</span>
+                <span class="text-4xl md:text-6xl font-serif italic text-ink">Peres Képviselet</span>
+                <span class="text-xl md:text-3xl font-sans font-bold text-accent">•</span>
+                <span class="text-4xl md:text-6xl font-serif italic text-gray-300">Követeléskezelés</span>
+                <span class="text-xl md:text-3xl font-sans font-bold text-accent pl-12">•</span>
+            </div>
+            <!-- Duplikált kör (folytonos görgetéshez) -->
+            <div class="whitespace-nowrap flex gap-12 items-center shrink-0" aria-hidden="true">
+                <span class="text-4xl md:text-6xl font-serif italic text-ink">Munkajog</span>
+                <span class="text-xl md:text-3xl font-sans font-bold text-accent">•</span>
+                <span class="text-4xl md:text-6xl font-serif italic text-gray-300">Fuvarozási Jog</span>
+                <span class="text-xl md:text-3xl font-sans font-bold text-accent">•</span>
+                <span class="text-4xl md:text-6xl font-serif italic text-ink">Ingatlanjog</span>
+                <span class="text-xl md:text-3xl font-sans font-bold text-accent">•</span>
+                <span class="text-4xl md:text-6xl font-serif italic text-gray-300">Társasági Jog</span>
+                <span class="text-xl md:text-3xl font-sans font-bold text-accent">•</span>
+                <span class="text-4xl md:text-6xl font-serif italic text-ink">Peres Képviselet</span>
+                <span class="text-xl md:text-3xl font-sans font-bold text-accent">•</span>
+                <span class="text-4xl md:text-6xl font-serif italic text-gray-300">Követeléskezelés</span>
+                <span class="text-xl md:text-3xl font-sans font-bold text-accent pl-12">•</span>
+            </div>
         </div>
     </div>
 
