@@ -154,34 +154,34 @@
             <i data-lucide="menu" class="w-8 h-8 transition-opacity duration-300" id="menu-icon-open"></i>
             <i data-lucide="x" class="w-8 h-8 absolute opacity-0 scale-75 transition-all duration-300"
                 id="menu-icon-close"></i>
-        </button>
-
-        <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu"
-            class="fixed inset-0 bg-paper z-[60] flex flex-col justify-center items-center opacity-0 pointer-events-none transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
-            <div class="flex flex-col gap-8 text-center">
-                <a href="#about"
-                    class="mobile-link text-4xl font-serif text-ink opacity-0 translate-y-8 transition-all duration-500 delay-100 italic"
-                    onclick="toggleMenu()">Bemutatkozás</a>
-                <a href="#team"
-                    class="mobile-link text-4xl font-serif text-ink opacity-0 translate-y-8 transition-all duration-500 delay-150 italic"
-                    onclick="toggleMenu()">Csapat</a>
-                <a href="#expertise"
-                    class="mobile-link text-4xl font-serif text-ink opacity-0 translate-y-8 transition-all duration-500 delay-200 italic"
-                    onclick="toggleMenu()">Szakterületek</a>
-                <a href="#contact"
-                    class="mobile-link text-4xl font-serif text-ink opacity-0 translate-y-8 transition-all duration-500 delay-300 italic"
-                    onclick="toggleMenu()">Kapcsolat</a>
             </div>
-
-            <div
-                class="absolute bottom-12 flex gap-6 mt-12 opacity-0 translate-y-4 mobile-footer transition-all duration-500 delay-500">
-                <a href="#" class="text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-accent">HU</a>
-                <a href="#" class="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-accent">EN</a>
-                <a href="#" class="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-accent">FR</a>
-            </div>
-        </div>
     </nav>
+
+    <!-- Mobile Menu Overlay (outside nav to avoid mix-blend-difference) -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-paper z-[60] flex flex-col justify-center items-center opacity-0 pointer-events-none transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+        <div class="flex flex-col gap-8 text-center">
+            <a href="#about"
+                class="mobile-link text-4xl font-serif text-ink opacity-0 translate-y-8 transition-all duration-500 delay-100 italic"
+                onclick="toggleMenu()">Bemutatkozás</a>
+            <a href="#team"
+                class="mobile-link text-4xl font-serif text-ink opacity-0 translate-y-8 transition-all duration-500 delay-150 italic"
+                onclick="toggleMenu()">Csapat</a>
+            <a href="#expertise"
+                class="mobile-link text-4xl font-serif text-ink opacity-0 translate-y-8 transition-all duration-500 delay-200 italic"
+                onclick="toggleMenu()">Szakterületek</a>
+            <a href="#contact"
+                class="mobile-link text-4xl font-serif text-ink opacity-0 translate-y-8 transition-all duration-500 delay-300 italic"
+                onclick="toggleMenu()">Kapcsolat</a>
+        </div>
+
+        <div
+            class="absolute bottom-12 flex gap-6 mt-12 opacity-0 translate-y-4 mobile-footer transition-all duration-500 delay-500">
+            <a href="#" class="text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-accent">HU</a>
+            <a href="#" class="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-accent">EN</a>
+            <a href="#" class="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-accent">FR</a>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <header class="relative min-h-screen flex flex-col justify-end pb-20 px-6 md:px-12 pt-32">
