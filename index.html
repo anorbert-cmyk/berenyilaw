@@ -148,9 +148,35 @@
             <a href="#contact" class="hover:text-accent transition-colors hover-trigger">Kapcsolat</a>
         </div>
 
-        <button class="md:hidden z-50 text-ink">
-            <i data-lucide="menu" class="w-8 h-8"></i>
+        <button id="mobile-menu-btn"
+            class="md:hidden z-50 text-ink relative w-10 h-10 flex items-center justify-center transition-colors duration-300">
+            <i data-lucide="menu" class="w-8 h-8 transition-opacity duration-300" id="menu-icon-open"></i>
+            <i data-lucide="x" class="w-8 h-8 absolute opacity-0 scale-75 transition-all duration-300"
+                id="menu-icon-close"></i>
         </button>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="fixed inset-0 bg-paper z-40 flex flex-col justify-center items-center opacity-0 pointer-events-none transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+            <div class="flex flex-col gap-8 text-center">
+                <a href="#about"
+                    class="mobile-link text-4xl font-serif text-ink opacity-0 translate-y-8 transition-all duration-500 delay-100 italic"
+                    onclick="toggleMenu()">Bemutatkozás</a>
+                <a href="#expertise"
+                    class="mobile-link text-4xl font-serif text-ink opacity-0 translate-y-8 transition-all duration-500 delay-200 italic"
+                    onclick="toggleMenu()">Szakterületek</a>
+                <a href="#contact"
+                    class="mobile-link text-4xl font-serif text-ink opacity-0 translate-y-8 transition-all duration-500 delay-300 italic"
+                    onclick="toggleMenu()">Kapcsolat</a>
+            </div>
+
+            <div
+                class="absolute bottom-12 flex gap-6 mt-12 opacity-0 translate-y-4 mobile-footer transition-all duration-500 delay-500">
+                <a href="#" class="text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-accent">HU</a>
+                <a href="#" class="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-accent">EN</a>
+                <a href="#" class="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-accent">FR</a>
+            </div>
+        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -165,7 +191,7 @@
         <div class="relative z-10 max-w-4xl">
             <p class="text-accent uppercase tracking-[0.2em] text-sm mb-6 reveal-text" style="transition-delay: 0.1s;">
                 Fuvarozási Jog & Munkajog</p>
-            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl leading-[0.9] mb-8 reveal-text"
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl leading-tight md:leading-[0.9] mb-8 reveal-text"
                 style="transition-delay: 0.2s;">
                 Generációk tudása.<br>
                 <span class="italic text-stone-dark">Modern lendület.</span>
@@ -226,7 +252,7 @@
     </div>
 
     <!-- About Section -->
-    <section id="about" class="py-24 md:py-32 px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+    <section id="about" class="py-16 md:py-32 px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
         <div class="md:col-span-5 reveal-text sticky top-32">
             <div class="w-full aspect-[3/4] img-hover-container relative bg-gray-200">
                 <!-- Itt cseréltem le a placeholder képet a felhasználó által feltöltöttre -->
@@ -287,7 +313,7 @@
     </section>
 
     <!-- Services Grid -->
-    <section id="expertise" class="bg-ink text-paper py-24 px-6 md:px-12">
+    <section id="expertise" class="bg-ink text-paper py-16 md:py-24 px-6 md:px-12">
         <div class="mb-16 reveal-text">
             <span class="text-accent text-sm font-bold uppercase tracking-widest block mb-4">Praxis</span>
             <h2 class="font-serif text-5xl md:text-6xl text-white">Kiemelt Szakterületek</h2>
@@ -545,6 +571,52 @@
                 nav.classList.remove('py-4');
             }
         });
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const menuOverlay = document.getElementById('mobile-menu');
+        const menuIconOpen = document.getElementById('menu-icon-open');
+        const menuIconClose = document.getElementById('menu-icon-close');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        const mobileFooter = document.querySelector('.mobile-footer');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+
+            if (isMenuOpen) {
+                // Open Menu
+                menuOverlay.classList.remove('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = 'hidden';
+
+                // Icon animation
+                menuIconOpen.classList.add('opacity-0', 'scale-75');
+                menuIconClose.classList.remove('opacity-0', 'scale-75');
+
+                // Staggered Text Reveal
+                mobileLinks.forEach(link => {
+                    link.classList.remove('opacity-0', 'translate-y-8');
+                });
+                mobileFooter.classList.remove('opacity-0', 'translate-y-4');
+
+            } else {
+                // Close Menu
+                menuOverlay.classList.add('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = '';
+
+                // Icon animation
+                menuIconOpen.classList.remove('opacity-0', 'scale-75');
+                menuIconClose.classList.add('opacity-0', 'scale-75');
+
+                // Staggered Text Reset
+                mobileLinks.forEach(link => {
+                    link.classList.add('opacity-0', 'translate-y-8');
+                });
+                mobileFooter.classList.add('opacity-0', 'translate-y-4');
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
     </script>
 </body>
 
