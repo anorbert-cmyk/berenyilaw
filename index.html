@@ -583,11 +583,16 @@
 
         function toggleMenu() {
             isMenuOpen = !isMenuOpen;
+            const logo = document.querySelector('nav a');
 
             if (isMenuOpen) {
                 // Open Menu
                 menuOverlay.classList.remove('opacity-0', 'pointer-events-none');
                 document.body.style.overflow = 'hidden';
+
+                // Ensure logo is dark/visible on the paper background
+                logo.classList.remove('text-white', 'mix-blend-difference');
+                logo.classList.add('text-ink');
 
                 // Icon animation
                 menuIconOpen.classList.add('opacity-0', 'scale-75');
@@ -603,6 +608,12 @@
                 // Close Menu
                 menuOverlay.classList.add('opacity-0', 'pointer-events-none');
                 document.body.style.overflow = '';
+
+                // Reset logo style (only if at top of page, otherwise scroll listener handles it)
+                if (window.scrollY <= 50) {
+                    logo.classList.add('mix-blend-difference', 'text-white');
+                    logo.classList.remove('text-ink');
+                }
 
                 // Icon animation
                 menuIconOpen.classList.remove('opacity-0', 'scale-75');
