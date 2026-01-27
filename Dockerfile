@@ -13,6 +13,7 @@ COPY berenyi-kristof.jpg /usr/share/nginx/html/
 COPY csorba-dorottya.jpg /usr/share/nginx/html/
 COPY logo.png /usr/share/nginx/html/
 COPY i18n.js /usr/share/nginx/html/
+RUN ls -la /usr/share/nginx/html/
 
 # Expose a Railway-féle dinamikus port
 EXPOSE $PORT
