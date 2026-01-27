@@ -337,12 +337,12 @@
                 <!-- Team Member 1 -->
                 <article class="reveal-text" style="transition-delay: 0.1s;">
                     <div class="w-full aspect-[4/5] img-hover-container relative bg-gray-200 mb-6">
-                        <img src="csorba-dorottya.jpg" alt="Dr. Csorba Dorottya portréfotója, ügyvédjelölt"
+                        <img src="csorba-dorottya.jpg" alt="Dr. Csorba Dorottya portréfotója, ügyvéd"
                             class="w-full h-full object-cover object-top img-hover-zoom grayscale hover:grayscale-0 transition-all duration-700">
                     </div>
                     <div class="flex justify-between items-baseline mb-2">
                         <h3 class="font-serif text-2xl md:text-3xl">Dr. Csorba Dorottya</h3>
-                        <span class="text-xs font-bold uppercase tracking-widest text-accent">Ügyvédjelölt</span>
+                        <span class="text-xs font-bold uppercase tracking-widest text-accent">Ügyvéd</span>
                     </div>
                     <p class="text-gray-600 leading-relaxed">
                         Az egyetem elvégzése óta erősíti csapatunkat. Szakterülete a társasági jogi ügyletek
@@ -521,34 +521,39 @@
                 <!-- Form -->
                 <div class="bg-white p-8 md:p-12 shadow-2xl shadow-gray-200/50 reveal-text h-fit"
                     style="transition-delay: 0.2s;">
-                    <form
-                        onsubmit="event.preventDefault(); alert('Köszönjük megkeresését! Hamarosan felvesszük Önnel a kapcsolatot.');"
-                        class="space-y-6">
+                    <form action="https://formsubmit.co/office@berenyi-law.hu" method="POST" class="space-y-6">
+                        <!-- Formsubmit.co hidden fields -->
+                        <input type="hidden" name="_subject" value="Új megkeresés a weboldalról">
+                        <input type="hidden" name="_next" value="https://berenyilaw-production.up.railway.app/#contact">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="text" name="_honey" style="display:none">
+
                         <div>
-                            <label
+                            <label for="name"
                                 class="block text-xs font-bold uppercase tracking-widest mb-2 text-gray-500">Név</label>
-                            <input type="text"
+                            <input type="text" name="name" id="name" required
                                 class="w-full bg-paper border-b border-gray-300 p-3 focus:outline-none focus:border-accent transition-colors"
                                 placeholder="Az Ön neve">
                         </div>
                         <div>
-                            <label class="block text-xs font-bold uppercase tracking-widest mb-2 text-gray-500">Email
+                            <label for="email"
+                                class="block text-xs font-bold uppercase tracking-widest mb-2 text-gray-500">Email
                                 cím</label>
-                            <input type="email"
+                            <input type="email" name="email" id="email" required
                                 class="w-full bg-paper border-b border-gray-300 p-3 focus:outline-none focus:border-accent transition-colors"
                                 placeholder="email@pelda.hu">
                         </div>
                         <div>
-                            <label
+                            <label for="phone"
                                 class="block text-xs font-bold uppercase tracking-widest mb-2 text-gray-500">Telefon</label>
-                            <input type="tel"
+                            <input type="tel" name="phone" id="phone"
                                 class="w-full bg-paper border-b border-gray-300 p-3 focus:outline-none focus:border-accent transition-colors"
                                 placeholder="+36...">
                         </div>
                         <div>
-                            <label
+                            <label for="message"
                                 class="block text-xs font-bold uppercase tracking-widest mb-2 text-gray-500">Üzenet</label>
-                            <textarea rows="4"
+                            <textarea name="message" id="message" rows="4" required
                                 class="w-full bg-paper border-b border-gray-300 p-3 focus:outline-none focus:border-accent transition-colors"
                                 placeholder="Miben segíthetek?"></textarea>
                         </div>
