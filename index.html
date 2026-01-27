@@ -195,12 +195,15 @@
             </a>
 
             <!-- Language Switcher -->
-            <div class="flex gap-2 ml-4 border-l border-ink/20 pl-6">
-                <button class="lang-switch hover:text-accent transition-colors font-bold" data-lang="hu">HU</button>
+            <div class="flex gap-2 ml-4 border-l border-ink/20 pl-6 text-xs">
+                <button class="lang-btn hover:text-accent transition-colors font-bold text-ink"
+                    data-lang="hu">HU</button>
                 <span class="text-gray-300">|</span>
-                <button class="lang-switch hover:text-accent transition-colors" data-lang="en">EN</button>
+                <button class="lang-btn hover:text-accent transition-colors font-medium text-gray-400"
+                    data-lang="en">EN</button>
                 <span class="text-gray-300">|</span>
-                <button class="lang-switch hover:text-accent transition-colors" data-lang="fr">FR</button>
+                <button class="lang-btn hover:text-accent transition-colors font-medium text-gray-400"
+                    data-lang="fr">FR</button>
             </div>
         </div>
         <button id="mobile-menu-btn"
@@ -551,10 +554,10 @@
                             class="text-xs font-bold uppercase border border-white/20 px-3 py-1 rounded-full">Kiemelt</span>
                     </div>
                     <div class="z-10 relative">
-                        <h3 class="font-serif text-3xl md:text-4xl mb-4 text-white"
-                            data-i18n="expertise.corporate.title">Munkajog</h3>
+                        <h3 class="font-serif text-3xl md:text-4xl mb-4 text-white" data-i18n="expertise.labor.title">
+                            Munkajog</h3>
                         <p class="text-gray-400 group-hover:text-ink transition-colors max-w-md"
-                            data-i18n="expertise.corporate.desc">
+                            data-i18n="expertise.labor.desc">
                             Munkavállalók és munkáltatók teljeskörű jogi képviselete. Munkaszerződések, felmondások,
                             versenytilalmi megállapodások és munkaügyi perek.
                         </p>
@@ -711,7 +714,7 @@
                                 data-i18n="contact.form.name">Név</label>
                             <input type="text" name="name" id="name" required
                                 class="w-full bg-paper border-b border-gray-300 p-3 focus:outline-none focus:border-accent transition-colors"
-                                placeholder="Az Ön neve">
+                                placeholder="Az Ön neve" data-i18n-placeholder="contact.form.name_placeholder">
                         </div>
                         <div>
                             <label for="email"
@@ -720,7 +723,7 @@
                                 cím</label>
                             <input type="email" name="email" id="email" required
                                 class="w-full bg-paper border-b border-gray-300 p-3 focus:outline-none focus:border-accent transition-colors"
-                                placeholder="email@pelda.hu">
+                                placeholder="email@pelda.hu" data-i18n-placeholder="contact.form.email_placeholder">
                         </div>
                         <div>
                             <label for="phone"
@@ -728,7 +731,7 @@
                                 data-i18n="contact.form.phone">Telefon</label>
                             <input type="tel" name="phone" id="phone"
                                 class="w-full bg-paper border-b border-gray-300 p-3 focus:outline-none focus:border-accent transition-colors"
-                                placeholder="+36...">
+                                placeholder="+36..." data-i18n-placeholder="contact.form.phone_placeholder">
                         </div>
                         <div>
                             <label for="message"
@@ -736,7 +739,8 @@
                                 data-i18n="contact.form.message">Üzenet</label>
                             <textarea name="message" id="message" rows="4" required
                                 class="w-full bg-paper border-b border-gray-300 p-3 focus:outline-none focus:border-accent transition-colors"
-                                placeholder="Miben segíthetek?"></textarea>
+                                placeholder="Miben segíthetek?"
+                                data-i18n-placeholder="contact.form.message_placeholder"></textarea>
                         </div>
                         <button type="submit"
                             class="w-full bg-ink text-white py-4 px-8 uppercase tracking-widest text-xs font-bold hover:bg-accent transition-colors duration-300 hover-trigger"
@@ -925,14 +929,7 @@
                 const translation = translations[lang] && getNestedTranslation(translations[lang], key);
 
                 if (translation) {
-                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                        // For form placeholders (maybe I should add data-i18n-placeholder support?)
-                        // Currently I only attached data-i18n to labels and button, not placeholders.
-                        // If placeholder needs translation, I need a different approach or data-i18n-placeholder.
-                        // But for now, let's stick to innerHTML/textContent.
-                    } else {
-                        element.innerHTML = translation;
-                    }
+                    element.innerHTML = translation;
                 }
             });
 
