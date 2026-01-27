@@ -409,7 +409,7 @@
                         <span class="bg-gray-300 text-ink px-3 py-1">EN</span>
                     </div>
 
-                    <!-- Expandable Bio -->
+                    <!-- Expandable Bio with Language Switcher -->
                     <details class="group">
                         <summary
                             class="cursor-pointer flex items-center gap-2 text-accent font-semibold text-sm uppercase tracking-widest hover:text-ink transition-colors">
@@ -417,35 +417,132 @@
                             <span class="hidden group-open:inline">−</span>
                             Személyes bemutatkozás
                         </summary>
-                        <div class="mt-4 pt-4 border-t border-ink/10 space-y-4 text-gray-600 text-sm leading-relaxed">
-                            <p>Engedjék meg, hogy bemutatkozzam, Dr. Berényi Kristóf ügyvéd, közlekedési szakjogász
-                                vagyok. Szakterületem a fuvarozási jog, közlekedési jog, munkajog, a büntetőjog,
-                                valamint a társasági jog és az ingatlanjog.</p>
-                            <p>Tudatosan készültem az ügyvédi pályára. Már egyetemi éveim alatt gyakornokként dolgoztam
-                                egy büntetőjoggal és idegenrendészeti joggal foglalkozó ügyvédi irodában.
-                                Ügyvédjelöltként egy vegyes praxisú irodában szereztem tapasztalatot, amely kiemelten
-                                foglalkozik fuvarozási joggal és munkajoggal. Ez a sokrétű gyakorlat tette lehetővé,
-                                hogy a szakvizsga letétele után azonnal önálló praxist indíthassak.</p>
-                            <p>A praxis azóta folyamatosan és organikusan fejlődik. Ma már nagyvállalatok, KKV-k és
-                                magánszemélyek jogi képviseletét egyaránt ellátom. A szakmai fejlődés jegyében 2024-ben
-                                közlekedési szakjogászi végzettséget szereztem, emellett rendelkezem az elektronikus
-                                ingatlan-nyilvántartási eljárásokhoz szükséges tanúsítvánnyal is, így ügyfeleimnek a
-                                legmodernebb eszközökkel tudok szolgálni.</p>
-                            <p>A francia nyelv és kultúra iránti érdeklődésem középiskolás koromban kezdődött, amikor
-                                nyaranta franciaországi nyelvtanfolyamokon vettem részt. A jogi egyetemi tanulmányaim
-                                alatt az Erasmus program keretében egy évet töltöttem a párizsi Faculté Jean Monnet jogi
-                                karán, amely megalapozta nemzetközi orientációmat, ennek köszönhetően ma kiterjedt
-                                nemzetközi kapcsolatrendszerrel rendelkezem, és aktív részese vagyok a frankofón jogi
-                                közösségnek.</p>
-                            <p>2025-ben elnyertem a Párizsi Ügyvédi Kamara fiatal ügyvédeknek szóló, két hónapos
-                                ösztöndíját, így 1 hónapon keresztül 33 eltérő országból érkező ügyvéd kollégával vettem
-                                részt a párizsi továbbképzésen és további 1 hónapon keresztül egy büntetőjogra
-                                szakosodott párizsi irodával dolgozhattam együtt.</p>
-                            <p>Francia és angol munkanyelvvel külföldi ügyfelek jogi képviseletét is magabiztosan
-                                vállalom, legyen szó akár magyar, akár határokon átnyúló ügyletekről.</p>
-                            <p>Az ügyvédi hivatás számomra nem csupán szakmát, hanem közösséget is jelent. Aktívan részt
-                                veszek az ügyvédi kamara és a szélesebb szakmai közösség életében, hozzájárulva a magyar
-                                ügyvédség fejlődéséhez.</p>
+                        <div class="mt-4 pt-4 border-t border-ink/10">
+                            <!-- Language Tabs -->
+                            <div class="flex gap-2 mb-4" role="tablist">
+                                <button
+                                    class="bio-lang-tab px-3 py-1 text-xs font-bold uppercase tracking-widest bg-ink text-white transition-colors"
+                                    data-lang="hu" data-person="kristof" role="tab" aria-selected="true">HU</button>
+                                <button
+                                    class="bio-lang-tab px-3 py-1 text-xs font-bold uppercase tracking-widest bg-gray-200 text-ink hover:bg-gray-300 transition-colors"
+                                    data-lang="fr" data-person="kristof" role="tab" aria-selected="false">FR</button>
+                                <button
+                                    class="bio-lang-tab px-3 py-1 text-xs font-bold uppercase tracking-widest bg-gray-200 text-ink hover:bg-gray-300 transition-colors"
+                                    data-lang="en" data-person="kristof" role="tab" aria-selected="false">EN</button>
+                            </div>
+
+                            <!-- HU Bio -->
+                            <div class="bio-content space-y-4 text-gray-700 text-sm leading-relaxed" data-lang="hu"
+                                data-person="kristof">
+                                <p>Engedjék meg, hogy bemutatkozzam, Dr. Berényi Kristóf ügyvéd, közlekedési szakjogász
+                                    vagyok. Szakterületem a fuvarozási jog, közlekedési jog, munkajog, a büntetőjog,
+                                    valamint a társasági jog és az ingatlanjog.</p>
+                                <p>Tudatosan készültem az ügyvédi pályára. Már egyetemi éveim alatt gyakornokként
+                                    dolgoztam
+                                    egy büntetőjoggal és idegenrendészeti joggal foglalkozó ügyvédi irodában.
+                                    Ügyvédjelöltként egy vegyes praxisú irodában szereztem tapasztalatot, amely
+                                    kiemelten
+                                    foglalkozik fuvarozási joggal és munkajoggal. Ez a sokrétű gyakorlat tette lehetővé,
+                                    hogy a szakvizsga letétele után azonnal önálló praxist indíthassak.</p>
+                                <p>A praxis azóta folyamatosan és organikusan fejlődik. Ma már nagyvállalatok, KKV-k és
+                                    magánszemélyek jogi képviseletét egyaránt ellátom. A szakmai fejlődés jegyében
+                                    2024-ben
+                                    közlekedési szakjogászi végzettséget szereztem, emellett rendelkezem az elektronikus
+                                    ingatlan-nyilvántartási eljárásokhoz szükséges tanúsítvánnyal is, így ügyfeleimnek a
+                                    legmodernebb eszközökkel tudok szolgálni.</p>
+                                <p>A francia nyelv és kultúra iránti érdeklődésem középiskolás koromban kezdődött,
+                                    amikor
+                                    nyaranta franciaországi nyelvtanfolyamokon vettem részt. A jogi egyetemi
+                                    tanulmányaim
+                                    alatt az Erasmus program keretében egy évet töltöttem a párizsi Faculté Jean Monnet
+                                    jogi
+                                    karán, amely megalapozta nemzetközi orientációmat, ennek köszönhetően ma kiterjedt
+                                    nemzetközi kapcsolatrendszerrel rendelkezem, és aktív részese vagyok a frankofón
+                                    jogi
+                                    közösségnek.</p>
+                                <p>2026-ban elnyertem a Párizsi Ügyvédi Kamara fiatal ügyvédeknek szóló, két hónapos
+                                    ösztöndíját, így 1 hónapon keresztül 33 eltérő országból érkező ügyvéd kollégával
+                                    vettem
+                                    részt a párizsi továbbképzésen és további 1 hónapon keresztül egy büntetőjogra
+                                    szakosodott párizsi irodával dolgozhattam együtt.</p>
+                                <p>Francia és angol munkanyelvvel külföldi ügyfelek jogi képviseletét is magabiztosan
+                                    vállalom, legyen szó akár magyar, akár határokon átnyúló ügyletekről.</p>
+                                <p>Az ügyvédi hivatás számomra nem csupán szakmát, hanem közösséget is jelent. Aktívan
+                                    részt
+                                    veszek az ügyvédi kamara és a szélesebb szakmai közösség életében, hozzájárulva a
+                                    magyar
+                                    ügyvédség fejlődéséhez.</p>
+                            </div>
+
+                            <!-- FR Bio -->
+                            <div class="bio-content space-y-4 text-gray-700 text-sm leading-relaxed hidden"
+                                data-lang="fr" data-person="kristof">
+                                <p>Permettez-moi de me présenter : je suis Dr. Berényi Kristóf, avocat et spécialiste du
+                                    droit des transports. Mes domaines d'expertise sont le droit du transport, le droit
+                                    de la circulation, le droit du travail, le droit pénal, ainsi que le droit des
+                                    sociétés et le droit immobilier.</p>
+                                <p>Je me suis préparé consciemment à la profession d'avocat. Dès mes années
+                                    universitaires, j'ai travaillé comme stagiaire dans un cabinet d'avocats spécialisé
+                                    en droit pénal et en procédures liées au droit des étrangers. Pendant ma période de
+                                    stage, j'ai acquis de l'expérience dans un cabinet à pratique mixte, notamment en
+                                    droit du transport et en droit du travail. Cette pratique diversifiée m'a permis de
+                                    lancer immédiatement mon propre cabinet après avoir passé l'examen professionnel.
+                                </p>
+                                <p>Le cabinet a continué à se développer de manière organique. Aujourd'hui, je
+                                    représente aussi bien de grandes entreprises, des PME que des particuliers. Dans le
+                                    cadre de mon développement professionnel, j'ai obtenu en 2024 une spécialisation en
+                                    droit de la circulation routière et je dispose également du certificat nécessaire
+                                    pour les procédures électroniques du registre foncier, permettant ainsi d'offrir à
+                                    mes clients les outils les plus modernes.</p>
+                                <p>Mon intérêt pour la langue et la culture françaises a commencé au lycée, lorsque je
+                                    participais chaque été à des cours de langue en France. Durant mes études
+                                    juridiques, j'ai passé un an à la Faculté Jean Monnet de Paris dans le cadre du
+                                    programme Erasmus, ce qui a fondé mon orientation internationale. Grâce à cela, je
+                                    dispose aujourd'hui d'un vaste réseau de relations internationales et je suis un
+                                    membre actif de la communauté juridique francophone.</p>
+                                <p>En 2026, j'ai reçu une bourse de deux mois du Barreau de Paris pour jeunes avocats.
+                                    Pendant un mois, j'ai participé à une formation parisienne avec des confrères de 33
+                                    pays différents, puis j'ai travaillé pendant un mois dans un cabinet parisien
+                                    spécialisé en droit pénal.</p>
+                                <p>Avec le français et l'anglais comme langues de travail, je peux représenter en toute
+                                    confiance des clients étrangers, qu'il s'agisse de dossiers hongrois ou
+                                    transfrontaliers.</p>
+                                <p>La profession d'avocat représente pour moi non seulement un métier, mais aussi une
+                                    communauté. Je participe activement à la vie du barreau et de la communauté
+                                    professionnelle au sens large, contribuant au développement du barreau hongrois.</p>
+                            </div>
+
+                            <!-- EN Bio -->
+                            <div class="bio-content space-y-4 text-gray-700 text-sm leading-relaxed hidden"
+                                data-lang="en" data-person="kristof">
+                                <p>Allow me to introduce myself: I am Dr. Berényi Kristóf, attorney-at-law and transport
+                                    law specialist. My areas of expertise include transport law, traffic law, labor law,
+                                    criminal law, as well as corporate law and real estate law.</p>
+                                <p>I prepared consciously for the legal profession. Already during my university years,
+                                    I worked as a trainee at a law firm specializing in criminal law and immigration
+                                    procedures. As a candidate attorney, I gained experience at a mixed-practice firm
+                                    that focuses on transport law and labor law. This diverse practice enabled me to
+                                    immediately launch my own practice after passing the bar exam.</p>
+                                <p>The practice has been growing organically ever since. Today, I represent large
+                                    corporations, SMEs, and individuals alike. As part of my professional development,
+                                    in 2024 I obtained a specialist qualification in traffic law and also hold the
+                                    certificate required for electronic land registry procedures, allowing me to serve
+                                    my clients with the most modern tools.</p>
+                                <p>My interest in the French language and culture began in high school, when I attended
+                                    summer language courses in France. During my legal studies, I spent a year at the
+                                    Faculté Jean Monnet in Paris as part of the Erasmus program, which established my
+                                    international orientation. Thanks to this, I now have an extensive international
+                                    network and am an active member of the francophone legal community.</p>
+                                <p>In 2026, I was awarded a two-month scholarship by the Paris Bar Association for young
+                                    lawyers. For one month, I participated in training in Paris with colleagues from 33
+                                    different countries, and for another month I worked with a criminal law firm in
+                                    Paris.</p>
+                                <p>With French and English as working languages, I confidently represent foreign
+                                    clients, whether in Hungarian or cross-border matters.</p>
+                                <p>For me, the legal profession represents not just a career, but a community. I
+                                    actively participate in the life of the bar association and the broader professional
+                                    community, contributing to the development of the Hungarian legal profession.</p>
+                            </div>
                         </div>
                     </details>
                 </article>
@@ -477,7 +574,7 @@
                         <span class="bg-gray-300 text-ink px-3 py-1">EN</span>
                     </div>
 
-                    <!-- Expandable Bio -->
+                    <!-- Expandable Bio with Language Switcher -->
                     <details class="group">
                         <summary
                             class="cursor-pointer flex items-center gap-2 text-accent font-semibold text-sm uppercase tracking-widest hover:text-ink transition-colors">
@@ -485,25 +582,64 @@
                             <span class="hidden group-open:inline">−</span>
                             Személyes bemutatkozás
                         </summary>
-                        <div class="mt-4 pt-4 border-t border-ink/10 space-y-4 text-gray-600 text-sm leading-relaxed">
-                            <p>Ügyvédjelöltként csatlakoztam az irodához, jelenleg jogi szakvizsgáimat kezdem meg.
-                                Szakterületem a követeléskezelés, végrehajtási jog, a társasági jog és a peres
-                                képviselet.</p>
-                            <p>Egyetemi tanulmányaim megkezdését követően a jogi diploma megszerzéséig teljes
-                                munkaidőben vállaltam munkát; gyakornokként és ügyvédjelöltként több neves ügyvédi
-                                irodában is dolgozhattam, ahol széleskörű gyakorlatot szereztem követeléskezelés,
-                                végrehajtási jog, agrárjog, társasági jog, ingatlanjog és gazdasági büntetőjog
-                                területén.</p>
-                            <p>Jelölti éveim nagyobb részét egy közepes méretű követeléskezelő társaságnál töltöttem
-                                peres jogászként, ahol heti több bírósági tárgyaláson láttam el jogi képviseletet.
-                                Jelentős tapasztalatot szereztem telekommunikációs és közműszerződésekből eredő
-                                követelések érvényesítése kapcsán. Lehetőségem volt megismerni a behajtásban érdekelt és
-                                az adós nézőpontját is, ezen komplex rálátás teszi lehetővé, hogy ma már egyaránt
-                                eredményesen képviseljem a behajtásban érdekelteket, valamint azon a magánszemélyek és
-                                vállalatok érdekeit is, akikkel szemben követelést érvényesítenek.</p>
-                            <p>Folyamatban lévő szakjogászi képzettségem megszerzése mellett, már elvégeztem a Budapest
-                                Institute of Banking által szervezett Pénzügyi Jogi Akadémiát.</p>
-                            <p>Magyar és angol nyelven állok ügyfeleink rendelkezésére.</p>
+                        <div class="mt-4 pt-4 border-t border-ink/10">
+                            <!-- Language Tabs -->
+                            <div class="flex gap-2 mb-4" role="tablist">
+                                <button
+                                    class="bio-lang-tab px-3 py-1 text-xs font-bold uppercase tracking-widest bg-ink text-white transition-colors"
+                                    data-lang="hu" data-person="dorottya" role="tab" aria-selected="true">HU</button>
+                                <button
+                                    class="bio-lang-tab px-3 py-1 text-xs font-bold uppercase tracking-widest bg-gray-200 text-ink hover:bg-gray-300 transition-colors"
+                                    data-lang="en" data-person="dorottya" role="tab" aria-selected="false">EN</button>
+                            </div>
+
+                            <!-- HU Bio -->
+                            <div class="bio-content space-y-4 text-gray-700 text-sm leading-relaxed" data-lang="hu"
+                                data-person="dorottya">
+                                <p>Ügyvédjelöltként csatlakoztam az irodához, jelenleg jogi szakvizsgáimat kezdem meg.
+                                    Szakterületem a követeléskezelés, végrehajtási jog, a társasági jog és a peres
+                                    képviselet.</p>
+                                <p>Egyetemi tanulmányaim megkezdését követően a jogi diploma megszerzéséig teljes
+                                    munkaidőben vállaltam munkát; gyakornokként és ügyvédjelöltként több neves ügyvédi
+                                    irodában is dolgozhattam, ahol széleskörű gyakorlatot szereztem követeléskezelés,
+                                    végrehajtási jog, agrárjog, társasági jog, ingatlanjog és gazdasági büntetőjog
+                                    területén.</p>
+                                <p>Jelölti éveim nagyobb részét egy közepes méretű követeléskezelő társaságnál töltöttem
+                                    peres jogászként, ahol heti több bírósági tárgyaláson láttam el jogi képviseletet.
+                                    Jelentős tapasztalatot szereztem telekommunikációs és közműszerződésekből eredő
+                                    követelések érvényesítése kapcsán. Lehetőségem volt megismerni a behajtásban
+                                    érdekelt és
+                                    az adós nézőpontját is, ezen komplex rálátás teszi lehetővé, hogy ma már egyaránt
+                                    eredményesen képviseljem a behajtásban érdekelteket, valamint azon a magánszemélyek
+                                    és
+                                    vállalatok érdekeit is, akikkel szemben követelést érvényesítenek.</p>
+                                <p>Folyamatban lévő szakjogászi képzettségem megszerzése mellett, már elvégeztem a
+                                    Budapest
+                                    Institute of Banking által szervezett Pénzügyi Jogi Akadémiát.</p>
+                                <p>Magyar és angol nyelven állok ügyfeleink rendelkezésére.</p>
+                            </div>
+
+                            <!-- EN Bio -->
+                            <div class="bio-content space-y-4 text-gray-700 text-sm leading-relaxed hidden"
+                                data-lang="en" data-person="dorottya">
+                                <p>I joined the firm as a candidate attorney and am currently beginning my bar exam
+                                    preparation. My areas of expertise include debt collection, enforcement law,
+                                    corporate law, and litigation.</p>
+                                <p>From the start of my university studies until obtaining my law degree, I worked
+                                    full-time as a trainee and candidate attorney at several prestigious law firms,
+                                    where I gained extensive experience in debt collection, enforcement law,
+                                    agricultural law, corporate law, real estate law, and white-collar criminal law.</p>
+                                <p>I spent most of my candidate years at a medium-sized debt collection company as
+                                    litigation counsel, where I represented clients at multiple court hearings each
+                                    week. I gained significant experience in enforcing claims arising from
+                                    telecommunications and utility contracts. I had the opportunity to understand both
+                                    the creditor's and debtor's perspectives, and this comprehensive insight enables me
+                                    to effectively represent both creditors and individuals or companies against whom
+                                    claims are being enforced.</p>
+                                <p>Alongside my ongoing specialist qualification training, I have already completed the
+                                    Financial Legal Academy organized by the Budapest Institute of Banking.</p>
+                                <p>I am available to our clients in both Hungarian and English.</p>
+                            </div>
                         </div>
                     </details>
                 </article>
@@ -735,7 +871,7 @@
                     </p>
                 </div>
                 <div class="flex flex-col md:items-end gap-2">
-                    <p class="uppercase tracking-widest">&copy; 2025 Berényi Kristóf Ügyvédi Iroda</p>
+                    <p class="uppercase tracking-widest">&copy; 2026 Berényi Kristóf Ügyvédi Iroda</p>
                     <div class="flex gap-6 uppercase tracking-widest">
                         <a href="privacy.html" class="hover:text-ink transition-colors">Adatvédelmi tájékoztató</a>
                     </div>
@@ -867,6 +1003,34 @@
         }
 
         menuBtn.addEventListener('click', toggleMenu);
+
+        // Language Tab Switcher for Bio Sections
+        document.querySelectorAll('.bio-lang-tab').forEach(button => {
+            button.addEventListener('click', function () {
+                const lang = this.dataset.lang;
+                const person = this.dataset.person;
+
+                // Update tab states
+                document.querySelectorAll(`.bio-lang-tab[data-person="${person}"]`).forEach(tab => {
+                    tab.classList.remove('bg-ink', 'text-white');
+                    tab.classList.add('bg-gray-200', 'text-ink');
+                    tab.setAttribute('aria-selected', 'false');
+                });
+
+                this.classList.remove('bg-gray-200', 'text-ink');
+                this.classList.add('bg-ink', 'text-white');
+                this.setAttribute('aria-selected', 'true');
+
+                // Show/hide content
+                document.querySelectorAll(`.bio-content[data-person="${person}"]`).forEach(content => {
+                    if (content.dataset.lang === lang) {
+                        content.classList.remove('hidden');
+                    } else {
+                        content.classList.add('hidden');
+                    }
+                });
+            });
+        });
     </script>
 </body>
 
