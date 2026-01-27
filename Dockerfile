@@ -16,3 +16,4 @@ COPY translations.js /usr/share/nginx/html/
 
 # Expose a Railway-féle dinamikus port
 EXPOSE $PORT
+# Build timestamp: Tue Jan 27 23:49:15 CET 2026
