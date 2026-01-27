@@ -11,6 +11,7 @@ const translations = {
         "hero.title.line2": "Modern lendület.",
         "hero.subtitle": "Három generáció tapasztalatára építve szolgáljuk ki ügyfeleinket a mai kor elvárásainak megfelelően.",
         "hero.cta": "Konzultációt kérek",
+        "hero.subtitle_label": "Ügyvédi Iroda",
 
         // Marquee
         "marquee.labor": "Munkajog",
@@ -35,7 +36,9 @@ const translations = {
         "about.highlight.languages.desc": "Magyar, Angol, Francia",
 
         // Expertise
-        "expertise.title": "Szakterületek",
+        "expertise.title": "Praxis",
+        "expertise.subtitle": "Kiemelt Szakterületek",
+        "expertise.featured": "Kiemelt",
         "expertise.transport.title": "Fuvarozási és Közlekedési Jog",
         "expertise.transport.desc": "Közúti árufuvarozói engedélyek, CMR egyezményből eredő jogviták, hatósági eljárások képviselete és biztosítási ügyek teljeskörű intézése.",
         "expertise.labor.title": "Munkajog",
@@ -74,12 +77,22 @@ const translations = {
         "team.dorottya.bio.p4": "Folyamatban lévő szakjogászi képzettségem megszerzése mellett, már elvégeztem a Budapest Institute of Banking által szervezett Pénzügyi Jogi Akadémiát.",
         "team.dorottya.bio.p5": "Magyar és angol nyelven állok ügyfeleink rendelkezésére.",
 
+        // Languages
+        "lang.hungarian": "Magyar",
+        "lang.english": "Angol",
+        "lang.french": "Francia",
+
         // Contact
         "contact.title": "Kapcsolat",
         "contact.address.label": "Címünk",
         "contact.address.value": "2040 Budaörs, Ifjúság utca 18. 1/6.<br><span class=\"text-sm text-gray-500\">(6-os kapucsengő)</span>",
         "contact.phone.label": "Telefonszám",
         "contact.email.label": "E-mail cím",
+        "contact.label_contacts": "Elérhetőségek",
+        "contact.label_office": "Iroda",
+        "contact.bell": "6-os csengő",
+        "contact.subtitle": "Küldjön üzenetet és rövidesen válaszolunk! Az ügyvéd-ügyfél kapcsolat bizalmi viszony, így minden megkeresést diszkréten kezelünk.",
+        "contact.desc": "<strong class=\"text-ink\">Cégjogi és ingatlanjogi ügyekben</strong> személyes megjelenés nélküli ügyintézésre is lehetőséget biztosítunk. <strong class=\"text-ink\">Online jogi tanácsadás</strong> elérhető.",
         "contact.transport.title": "Megközelítés",
         "contact.transport.desc": "Irodánk könnyen megközelíthető a 40-es, 140-es és 240-es autóbuszokkal. Autóval érkező ügyfeleink számára a parkolás az épület környékén ingyenesen biztosított.",
         "contact.online": "Igény esetén online jogi tanácsadást is biztosítunk.",
@@ -111,6 +124,7 @@ const translations = {
         "hero.title.line2": "Modern Momentum.",
         "hero.subtitle": "Building on the experience of three generations to serve our clients according to the expectations of the modern age.",
         "hero.cta": "Request Consultation",
+        "hero.subtitle_label": "Law Firm",
 
         // Marquee
         "marquee.labor": "Labor Law",
@@ -135,7 +149,9 @@ const translations = {
         "about.highlight.languages.desc": "Hungarian, English, French",
 
         // Expertise
-        "expertise.title": "Areas of Expertise",
+        "expertise.title": "Practice",
+        "expertise.subtitle": "Key Areas of Expertise",
+        "expertise.featured": "Featured",
         "expertise.transport.title": "Transport and Traffic Law",
         "expertise.transport.desc": "representation in road haulage licensing, disputes arising from the CMR Convention, representation in administrative proceedings, and full administration of insurance matters.",
         "expertise.labor.title": "Labor Law",
@@ -174,12 +190,22 @@ const translations = {
         "team.dorottya.bio.p4": "Alongside my ongoing specialist qualification training, I have already completed the Financial Legal Academy organized by the Budapest Institute of Banking.",
         "team.dorottya.bio.p5": "I am available to our clients in both Hungarian and English.",
 
+        // Languages
+        "lang.hungarian": "Hungarian",
+        "lang.english": "English",
+        "lang.french": "French",
+
         // Contact
         "contact.title": "Contact",
         "contact.address.label": "Address",
         "contact.address.value": "2040 Budaörs, Ifjúság utca 18. 1/6.<br><span class=\"text-sm text-gray-500\">(Doorbell 6)</span>",
         "contact.phone.label": "Phone",
         "contact.email.label": "Email",
+        "contact.label_contacts": "Contacts",
+        "contact.label_office": "Office",
+        "contact.bell": "Doorbell 6",
+        "contact.subtitle": "Send us a message and we will respond shortly! The attorney-client relationship is one of trust, so we treat all inquiries with discretion.",
+        "contact.desc": "<strong class=\"text-ink\">In corporate and real estate matters</strong>, we also facilitate administration without personal appearance. <strong class=\"text-ink\">Online legal consultation</strong> is available.",
         "contact.transport.title": "Access",
         "contact.transport.desc": "Our office is easily accessible by buses 40, 140, and 240. For clients arriving by car, parking is free in the vicinity of the building.",
         "contact.online": "We also provide online legal consultation upon request.",
@@ -211,6 +237,7 @@ const translations = {
         "hero.title.line2": "Élan moderne.",
         "hero.subtitle": "S'appuyant sur l'expérience de trois générations, nous servons nos clients selon les exigences de l'ère moderne.",
         "hero.cta": "Demander une consultation",
+        "hero.subtitle_label": "Cabinet d'Avocats",
 
         // Marquee
         "marquee.labor": "Droit du Travail",
@@ -235,7 +262,9 @@ const translations = {
         "about.highlight.languages.desc": "Hongrois, Anglais, Français",
 
         // Expertise
-        "expertise.title": "Domaines d'Expertise",
+        "expertise.title": "Pratique",
+        "expertise.subtitle": "Domaines d'Expertise Clés",
+        "expertise.featured": "En Vedette",
         "expertise.transport.title": "Droit des Transports et de la Circulation",
         "expertise.transport.desc": "Représentation pour les licences de transport routier, litiges découlant de la convention CMR, représentation dans les procédures administratives et gestion complète des dossiers d'assurance.",
         "expertise.labor.title": "Droit du Travail",
@@ -274,12 +303,22 @@ const translations = {
         "team.dorottya.bio.p4": "Parallèlement à ma formation de spécialiste en cours, j'ai déjà terminé l'Académie de Droit Financier organisée par l'Institut Bancaire de Budapest.",
         "team.dorottya.bio.p5": "Je suis à la disposition de nos clients en hongrois et en anglais.",
 
+        // Languages
+        "lang.hungarian": "Hongrois",
+        "lang.english": "Anglais",
+        "lang.french": "Français",
+
         // Contact
         "contact.title": "Contact",
         "contact.address.label": "Adresse",
         "contact.address.value": "2040 Budaörs, Ifjúság utca 18. 1/6.<br><span class=\"text-sm text-gray-500\">(Sonnette 6)</span>",
         "contact.phone.label": "Téléphone",
         "contact.email.label": "E-mail",
+        "contact.label_contacts": "Coordonnées",
+        "contact.label_office": "Bureau",
+        "contact.bell": "Sonnette 6",
+        "contact.subtitle": "Envoyez-nous un message et nous vous répondrons sous peu ! La relation avocat-client est une relation de confiance, nous traitons donc toutes les demandes avec discrétion.",
+        "contact.desc": "<strong class=\"text-ink\">En matière de droit des sociétés et d'immobilier</strong>, nous offrons également la possibilité de démarches sans comparution personnelle. <strong class=\"text-ink\">Consultation juridique en ligne</strong> disponible.",
         "contact.transport.title": "Accès",
         "contact.transport.desc": "Notre cabinet est facilement accessible par les bus 40, 140 et 240. Pour les clients arrivant en voiture, le stationnement est gratuit à proximité de l'immeuble.",
         "contact.online": "Nous proposons également des consultations juridiques en ligne sur demande.",
