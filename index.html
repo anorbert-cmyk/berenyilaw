@@ -521,11 +521,8 @@
                 <!-- Form -->
                 <div class="bg-white p-8 md:p-12 shadow-2xl shadow-gray-200/50 reveal-text h-fit"
                     style="transition-delay: 0.2s;">
-                    <form action="https://formsubmit.co/office@berenyi-law.hu" method="POST" class="space-y-6">
-                        <!-- Formsubmit.co hidden fields -->
-                        <input type="hidden" name="_subject" value="Új megkeresés a weboldalról">
-                        <input type="hidden" name="_next" value="https://berenyilaw-production.up.railway.app/#contact">
-                        <input type="hidden" name="_captcha" value="false">
+                    <form action="send-mail.php" method="POST" class="space-y-6">
+                        <!-- Honeypot spam védelem -->
                         <input type="text" name="_honey" style="display:none">
 
                         <div>
