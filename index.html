@@ -136,16 +136,18 @@
     <div class="cursor-outline hidden md:block"></div>
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 px-6 py-6 md:px-12 md:py-8 flex justify-between items-center mix-blend-difference text-white md:mix-blend-normal md:text-ink transition-colors duration-300"
+    <nav class="fixed w-full z-50 px-6 py-4 md:px-12 md:py-6 flex justify-between items-center mix-blend-difference text-white md:mix-blend-normal md:text-ink transition-colors duration-300"
         id="navbar">
-        <a href="#" class="text-xl md:text-2xl font-serif font-bold tracking-tighter hover-trigger z-50 uppercase">
-            Dr. Berényi Kristóf.
+        <a href="#" class="flex items-center gap-3 hover-trigger z-50">
+            <img src="logo.png" alt="Berényi Kristóf Ügyvédi Iroda logó" class="h-10 md:h-12 w-auto">
+            <span class="hidden md:block text-sm font-semibold tracking-wide uppercase">Berényi Kristóf Ügyvédi
+                Iroda</span>
         </a>
 
         <div class="hidden md:flex gap-12 text-sm font-semibold tracking-widest uppercase">
             <a href="#about" class="hover:text-accent transition-colors hover-trigger">Bemutatkozás</a>
-            <a href="#team" class="hover:text-accent transition-colors hover-trigger">Csapat</a>
             <a href="#expertise" class="hover:text-accent transition-colors hover-trigger">Szakterületek</a>
+            <a href="#team" class="hover:text-accent transition-colors hover-trigger">Csapat</a>
             <a href="#contact" class="hover:text-accent transition-colors hover-trigger">Kapcsolat</a>
         </div>
 
@@ -164,12 +166,12 @@
             <a href="#about"
                 class="mobile-link text-4xl font-serif text-ink opacity-0 translate-y-8 transition-all duration-500 delay-100 italic"
                 onclick="toggleMenu()">Bemutatkozás</a>
-            <a href="#team"
-                class="mobile-link text-4xl font-serif text-ink opacity-0 translate-y-8 transition-all duration-500 delay-150 italic"
-                onclick="toggleMenu()">Csapat</a>
             <a href="#expertise"
-                class="mobile-link text-4xl font-serif text-ink opacity-0 translate-y-8 transition-all duration-500 delay-200 italic"
+                class="mobile-link text-4xl font-serif text-ink opacity-0 translate-y-8 transition-all duration-500 delay-150 italic"
                 onclick="toggleMenu()">Szakterületek</a>
+            <a href="#team"
+                class="mobile-link text-4xl font-serif text-ink opacity-0 translate-y-8 transition-all duration-500 delay-200 italic"
+                onclick="toggleMenu()">Csapat</a>
             <a href="#contact"
                 class="mobile-link text-4xl font-serif text-ink opacity-0 translate-y-8 transition-all duration-500 delay-300 italic"
                 onclick="toggleMenu()">Kapcsolat</a>
@@ -194,7 +196,7 @@
 
         <div class="relative z-10 max-w-4xl">
             <p class="text-accent uppercase tracking-[0.2em] text-sm mb-6 reveal-text" style="transition-delay: 0.1s;">
-                Fuvarozási Jog & Munkajog</p>
+                Ügyvédi Iroda</p>
             <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl leading-tight md:leading-[0.9] mb-8 reveal-text"
                 style="transition-delay: 0.2s;">
                 Generációk tudása.<br>
@@ -202,8 +204,7 @@
             </h1>
             <p class="text-lg md:text-xl max-w-lg leading-relaxed text-gray-600 reveal-text"
                 style="transition-delay: 0.3s;">
-                Harmadik generációs jogászként célom az örökség továbbvitele a mai kor kihívásaihoz igazodva. Stratégiai
-                partnerség magyar, angol és francia nyelven.
+                Három generáció tapasztalatára építve szolgáljuk ki ügyfeleinket a mai kor elvárásainak megfelelően.
             </p>
 
             <div class="mt-12 reveal-text" style="transition-delay: 0.4s;">
@@ -280,43 +281,64 @@
             </div>
 
             <div class="md:col-span-7 md:pl-12">
+                <span class="text-accent text-sm font-bold uppercase tracking-widest block mb-4">Bemutatkozás</span>
                 <h2 class="font-serif text-4xl md:text-5xl mb-8 leading-tight reveal-text">
-                    "Egy ügyvédnek a jog valamennyi területén otthonosan kell mozognia."
+                    Generációk tudása, modern lendülettel
                 </h2>
 
                 <div class="space-y-6 text-gray-600 leading-relaxed reveal-text text-lg">
                     <p>
-                        Tudatosan készültem az ügyvédi pályára. Már a jogi egyetem alatt gyakornokként dolgoztam egy
-                        főként
-                        büntetőjoggal és idegenrendészeti eljárásokkal foglalkozó ügyvédi irodában.
+                        Irodavezető ügyvédünk családjában <strong class="text-ink">három generáció óta él a jogi
+                            hivatás</strong>:
+                        nagyapja a Budapesti 20. sz. ügyvédi munkaközösség meghatározó alakja volt. Ez a tapasztalat és
+                        elkötelezettség alapozza meg munkánkat, amelyben magánszemélyek és vállalkozások egyaránt
+                        számíthatnak ránk.
                     </p>
                     <p>
-                        Az egyetem elvégzése után az ügyvédjelölti időszakom döntő részében egy vegyes praxisú irodában
-                        szereztem tapasztalatot, amely kiemelten foglalkozik fuvarozási joggal és munkajoggal. Ez a
-                        széleskörű gyakorlati tudás tette lehetővé, hogy önálló praxist indítsak.
+                        Meggyőződésünk, hogy egy jó ügyvédnek átfogó jogi ismeretekkel kell rendelkeznie, ugyanakkor a
+                        legmagasabb színvonalú jogi képviselet ellátásához szükséges a szakterületi elmélyülés is.
+                        Irodánk kiemelt szakterületei:
+                        <a href="#expertise" class="text-accent hover:underline">fuvarozási jog</a>,
+                        <a href="#expertise" class="text-accent hover:underline">munkajog</a>,
+                        <a href="#expertise" class="text-accent hover:underline">közlekedési jog</a>,
+                        <a href="#expertise" class="text-accent hover:underline">követeléskezelés</a>,
+                        emellett kiemelten foglalkozunk büntetőjoggal, ingatlanjoggal és társasági joggal.
                     </p>
                     <p>
-                        Harmadik generációs jogászként célom, hogy a korábbi generációk örökségét vigyem tovább. Vallom,
-                        hogy bár vannak kiemelt szakterületeim, az ügyfél érdeke azt kívánja, hogy az összefüggéseket
-                        látva,
-                        széles körben tudjak jogi segítséget nyújtani – legyen szó akár egy komplex cégjogi
-                        átalakulásról,
-                        akár egy magánszemély ingatlanügyletéről.
+                        Mindez biztosítja, hogy Ügyfeleinknek <strong class="text-ink">komplex jogi
+                            szolgáltatást</strong>
+                        tudunk nyújtani peres, nemperes és peren kívüli eljárásokban is.
+                    </p>
+                    <p>
+                        A hagyományos értékekre építve kihasználjuk a digitális kor nyújtotta lehetőségeket.
+                        Cégjogi és ingatlanügyletekben jogi képviselet ellátását <strong class="text-ink">személyes
+                            megjelenés
+                            nélkül</strong> is vállaljuk, illetve bármilyen ügyben online jogi tanácsadást is
+                        biztosítunk.
+                        Rendelkezünk a bevezetésre váró elektronikus ingatlan-nyilvántartási eljárásokhoz szükséges
+                        vizsgával.
+                    </p>
+                    <p>
+                        Kiterjedt külföldi ügyfélkörünk és francia partnerirodáinkkal ápolt kapcsolataink révén
+                        <strong class="text-ink">nemzetközi ügyekben</strong> is otthonosan mozgunk. Francia és angol
+                        nyelven
+                        is állunk Ügyfeleink rendelkezésére. Irodánk aktívan részt vesz a magyarországi frankofón
+                        közéletben is.
                     </p>
                 </div>
 
                 <div class="mt-12 pt-8 border-t border-ink/10 grid grid-cols-2 md:grid-cols-3 gap-8 reveal-text">
                     <div>
-                        <h4 class="font-serif text-xl mb-2">Szakértelem</h4>
-                        <p class="text-sm text-gray-500">Munkajog & Fuvarozás</p>
+                        <h4 class="font-serif text-xl mb-2">Kiemelt területek</h4>
+                        <p class="text-sm text-gray-500">Fuvarozás, Munkajog, Közlekedési jog</p>
                     </div>
                     <div>
-                        <h4 class="font-serif text-xl mb-2">Megközelítés</h4>
-                        <p class="text-sm text-gray-500">Gyakorlatias & Stratégiai</p>
+                        <h4 class="font-serif text-xl mb-2">Digitális ügyintézés</h4>
+                        <p class="text-sm text-gray-500">Online tanácsadás, e-ingatlan</p>
                     </div>
                     <div>
                         <h4 class="font-serif text-xl mb-2">Nyelvek</h4>
-                        <p class="text-sm text-gray-500">Angol & Francia tárgyalóképes</p>
+                        <p class="text-sm text-gray-500">Magyar, Angol, Francia</p>
                     </div>
                 </div>
             </div>
@@ -329,43 +351,68 @@
             <div class="mb-12 reveal-text">
                 <span class="text-accent text-sm font-bold uppercase tracking-widest block mb-4">Csapat</span>
                 <h2 id="team-heading" class="font-serif text-5xl md:text-6xl">Munkatársaink</h2>
-                <p class="mt-4 text-lg text-gray-600 max-w-2xl">A siker kulcsa a felkészült csapat. Kollégáink
-                    elkötelezettek az iroda értékei és ügyfeleink sikere mellett.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                <!-- Team Member 1 -->
+                <!-- Dr. Berényi Kristóf - Irodavezető -->
                 <article class="reveal-text" style="transition-delay: 0.1s;">
                     <div class="w-full aspect-[4/5] img-hover-container relative bg-gray-200 mb-6">
-                        <img src="csorba-dorottya.jpg" alt="Dr. Csorba Dorottya portréfotója, ügyvéd"
+                        <img src="berenyi-kristof.jpg"
+                            alt="Dr. Berényi Kristóf LL.M., közlekedési szakjogász portréfotója"
                             class="w-full h-full object-cover object-top img-hover-zoom grayscale hover:grayscale-0 transition-all duration-700">
                     </div>
-                    <div class="flex justify-between items-baseline mb-2">
-                        <h3 class="font-serif text-2xl md:text-3xl">Dr. Csorba Dorottya</h3>
-                        <span class="text-xs font-bold uppercase tracking-widest text-accent">Ügyvéd</span>
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-serif text-2xl md:text-3xl">Dr. Berényi Kristóf</h3>
+                            <span class="text-xs font-bold uppercase tracking-widest text-accent">LL.M., közlekedési
+                                szakjogász – irodavezető ügyvéd</span>
+                        </div>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener"
+                            class="text-gray-400 hover:text-accent transition-colors" aria-label="LinkedIn profil">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
                     </div>
-                    <p class="text-gray-600 leading-relaxed">
-                        Dr. Berényi Kristóf ügyvédi irodájának társa. Szakterülete a társasági jogi ügyletek
-                        előkészítése és az ingatlanjogi szerződések. Precizitása és jogi látásmódja
-                        garancia a minőségi munkavégzésre.
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Széleskörű segítségnyújtás, sokrétű gyakorlattal a komplex jogi szolgáltatáshoz.
+                        Szakterülete a fuvarozási jog, közlekedési jog, munkajog, büntetőjog, társasági jog és
+                        ingatlanjog.
                     </p>
+                    <div class="flex gap-3 text-xs font-bold uppercase tracking-widest">
+                        <span class="bg-ink text-white px-3 py-1">HU</span>
+                        <span class="bg-accent text-white px-3 py-1">FR</span>
+                        <span class="bg-gray-300 text-ink px-3 py-1">EN</span>
+                    </div>
                 </article>
 
-                <!-- Team Member 2 -->
+                <!-- Dr. Csorba Dorottya - Ügyvédjelölt -->
                 <article class="reveal-text" style="transition-delay: 0.2s;">
                     <div class="w-full aspect-[4/5] img-hover-container relative bg-gray-200 mb-6">
-                        <img src="berenyi-kristof.jpg" alt="Dr. Berényi Kristóf portréfotója, ügyvéd"
+                        <img src="csorba-dorottya.jpg" alt="Dr. Csorba Dorottya ügyvédjelölt portréfotója"
                             class="w-full h-full object-cover object-top img-hover-zoom grayscale hover:grayscale-0 transition-all duration-700">
                     </div>
-                    <div class="flex justify-between items-baseline mb-2">
-                        <h3 class="font-serif text-2xl md:text-3xl">Dr. Berényi Kristóf</h3>
-                        <span class="text-xs font-bold uppercase tracking-widest text-accent">Ügyvéd</span>
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-serif text-2xl md:text-3xl">Dr. Csorba Dorottya</h3>
+                            <span class="text-xs font-bold uppercase tracking-widest text-accent">Ügyvédjelölt</span>
+                        </div>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener"
+                            class="text-gray-400 hover:text-accent transition-colors" aria-label="LinkedIn profil">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
                     </div>
-                    <p class="text-gray-600 leading-relaxed">
-                        Az iroda alapítója és vezetője. Több mint egy évtizedes tapasztalatával
-                        személyre szabott jogi megoldásokat nyújt ügyfelei számára. Elkötelezett a
-                        magas színvonalú, eredményorientált ügyvédi munka mellett.
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Szakterülete a követeléskezelés, végrehajtási jog, a társasági jog és a peres képviselet.
                     </p>
+                    <div class="flex gap-3 text-xs font-bold uppercase tracking-widest">
+                        <span class="bg-ink text-white px-3 py-1">HU</span>
+                        <span class="bg-gray-300 text-ink px-3 py-1">EN</span>
+                    </div>
                 </article>
             </div>
         </div>
@@ -464,23 +511,29 @@
         <div class="max-w-[1440px] mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-32">
                 <div class="reveal-text">
-                    <h2 class="font-serif text-5xl md:text-6xl mb-8">Kapcsolat</h2>
+                    <span class="text-accent text-sm font-bold uppercase tracking-widest block mb-4">Kapcsolat</span>
+                    <h2 class="font-serif text-5xl md:text-6xl mb-8">Írjon nekünk</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Küldjön üzenetet és rövidesen válaszolunk! Az ügyvéd-ügyfél kapcsolat bizalmi viszony,
+                        így minden megkeresést diszkréten kezelünk.
+                    </p>
                     <p class="text-lg text-gray-600 mb-12">
-                        Küldjön üzenetet és rövidesen válaszolok! Az ügyvéd-ügyfél kapcsolat bizalmi viszony, így minden
-                        megkeresést diszkréten kezelek.
+                        <strong class="text-ink">Cégjogi és ingatlanjogi ügyekben</strong> személyes megjelenés nélküli
+                        ügyintézésre is lehetőséget biztosítunk. <strong class="text-ink">Online jogi
+                            tanácsadás</strong> elérhető.
                     </p>
 
                     <div class="space-y-8">
                         <!-- Contact Info -->
                         <div>
                             <p class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Elérhetőségek</p>
-                            <a href="mailto:kristof@berenyi-law.hu"
+                            <a href="mailto:office@berenyi-law.hu"
                                 class="block text-2xl font-serif hover:text-accent transition-colors hover-trigger mb-2">
-                                kristof@berenyi-law.hu
+                                office@berenyi-law.hu
                             </a>
-                            <a href="tel:+36307012405"
+                            <a href="tel:+36301771679"
                                 class="block text-xl font-sans text-ink hover:text-accent transition-colors hover-trigger">
-                                +36 (30) 701 2405
+                                +36 (30) 177 1679
                             </a>
                         </div>
 
@@ -488,30 +541,43 @@
                         <div>
                             <p class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Iroda</p>
                             <p class="text-lg text-ink leading-relaxed">
-                                1117 Budapest,<br>
-                                Hamzsabégi út 15. 5/1.
+                                2040 Budaörs,<br>
+                                Ifjúság utca 18. 1/6.<br>
+                                <span class="text-gray-500">6-os csengő</span>
                             </p>
+                        </div>
+
+                        <!-- Google Maps Embed -->
+                        <div class="w-full aspect-video bg-gray-200">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2697.5!2d18.9547!3d47.4628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741e9e7e7e7e7e7%3A0x0!2sIfj%C3%BAs%C3%A1g%20u.%2018%2C%20Buda%C3%B6rs%2C%202040!5e0!3m2!1shu!2shu!4v1706385600000"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Berényi Kristóf Ügyvédi Iroda térképen">
+                            </iframe>
                         </div>
 
                         <!-- Directions Info Box -->
                         <div class="bg-white p-6 border border-ink/5 text-sm space-y-4">
                             <div>
-                                <strong class="block font-serif text-lg mb-1">Megközelítés</strong>
+                                <strong class="block font-serif text-lg mb-2">Megközelítés</strong>
                                 <p class="text-gray-500">
-                                    <span class="font-bold">Tömegközlekedés:</span> M4 metró, 4, 6, 17, 41, 47, 56
-                                    villamosok (Újbuda-központ / Móricz Zs. körtér / Etele út).
+                                    <span class="font-bold text-ink">Kelenföldről:</span> 40, 40B, 40E buszokkal a
+                                    Gimnázium/Budaörsi lakótelep megállótól pár perc séta.
                                 </p>
                                 <p class="text-gray-500 mt-2">
-                                    <span class="font-bold">Autóval:</span> Petőfi híd vagy Rákóczi híd felől pesti
-                                    oldalról, Fehérvári út vagy Budafoki út budai oldalról.
+                                    <span class="font-bold text-ink">Széll Kálmán térről:</span> 140, 140E buszokkal a
+                                    Gimnázium/Budaörsi lakótelep megállótól pár perc séta.
+                                </p>
+                                <p class="text-gray-500 mt-2">
+                                    <span class="font-bold text-ink">Móricz Zsigmond körtérről:</span> 240 busszal a
+                                    Gimnázium/Budaörsi lakótelep megállótól pár perc séta.
                                 </p>
                             </div>
                             <div class="border-t border-gray-100 pt-3">
                                 <strong class="block font-serif text-lg mb-1">Parkolás</strong>
                                 <p class="text-gray-500">
-                                    Utcai fizetős övezet (H-P 08-18h, kód: <span
-                                        class="font-bold text-ink">3114</span>),
-                                    vagy az Allee Bevásárlóközpont parkolója.
+                                    Az iroda előtt a <span class="font-bold text-ink">parkolás ingyenes</span>.
                                 </p>
                             </div>
                         </div>
@@ -563,11 +629,23 @@
             </div>
 
             <div
-                class="flex flex-col md:flex-row justify-between items-end mt-24 pt-8 border-t border-ink/10 text-xs text-gray-400 uppercase tracking-widest">
-                <p>&copy; 2024 Dr. Berényi Kristóf Ügyvédi Iroda.</p>
-                <div class="flex gap-6 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-ink transition-colors">Adatvédelmi tájékoztató</a>
-                    <a href="#" class="hover:text-ink transition-colors">Impresszum</a>
+                class="flex flex-col md:flex-row justify-between items-start mt-24 pt-8 border-t border-ink/10 text-xs text-gray-400">
+                <div class="max-w-2xl mb-6 md:mb-0">
+                    <p class="leading-relaxed">
+                        Ezt a honlapot a <strong class="text-ink">Pest Vármegyei Ügyvédi Kamarában</strong> bejegyzett
+                        Berényi Kristóf Ügyvédi Iroda tartja fenn az ügyvédekre vonatkozó jogszabályok és belső
+                        szabályzatok
+                        szerint, melyek az ügyféljogokra vonatkozó tájékoztatással együtt a
+                        <a href="https://www.magyarugyvedikamara.hu" target="_blank" rel="noopener"
+                            class="text-accent hover:underline">www.magyarugyvedikamara.hu</a>
+                        honlapon találhatóak.
+                    </p>
+                </div>
+                <div class="flex flex-col md:items-end gap-2">
+                    <p class="uppercase tracking-widest">&copy; 2025 Berényi Kristóf Ügyvédi Iroda</p>
+                    <div class="flex gap-6 uppercase tracking-widest">
+                        <a href="privacy.html" class="hover:text-ink transition-colors">Adatvédelmi tájékoztató</a>
+                    </div>
                 </div>
             </div>
         </div>
