@@ -580,72 +580,112 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1">
                 <!-- Fuvarozási jog -->
                 <div
-                    class="group bg-stone-dark p-8 hover:bg-stone-dark/80 transition-colors reveal-text border-t border-white/5 h-full flex flex-col">
+                    class="expertise-card group bg-stone-dark p-8 hover:bg-stone-dark/80 transition-colors reveal-text border-t border-white/5 h-full flex flex-col">
                     <h3 class="font-serif text-2xl mb-4 text-white" data-i18n="expertise.transport.title">Fuvarozási jog
                     </h3>
-                    <div class="text-[13px] text-gray-400 leading-relaxed font-sans"
+                    <div class="expertise-desc hidden text-[13px] text-gray-400 leading-relaxed font-sans mb-4"
                         data-i18n="expertise.transport.desc"></div>
+                    <button onclick="toggleExpertise(this)"
+                        class="mt-auto flex items-center gap-2 text-accent font-semibold text-xs uppercase tracking-widest hover:text-white transition-colors cursor-pointer hover-trigger">
+                        <span class="text-lg expertise-icon transition-transform">+</span>
+                        <span class="expertise-label" data-i18n="expertise.more">Bővebben</span>
+                    </button>
                 </div>
 
                 <!-- Munkajog -->
-                <div class="group bg-stone-dark p-8 hover:bg-stone-dark/80 transition-colors reveal-text border-t border-white/5 h-full flex flex-col"
+                <div class="expertise-card group bg-stone-dark p-8 hover:bg-stone-dark/80 transition-colors reveal-text border-t border-white/5 h-full flex flex-col"
                     style="transition-delay: 0.1s;">
                     <h3 class="font-serif text-2xl mb-4 text-white" data-i18n="expertise.labor.title">Munkajog</h3>
-                    <div class="text-[13px] text-gray-400 leading-relaxed font-sans" data-i18n="expertise.labor.desc">
-                    </div>
+                    <div class="expertise-desc hidden text-[13px] text-gray-400 leading-relaxed font-sans mb-4"
+                        data-i18n="expertise.labor.desc"></div>
+                    <button onclick="toggleExpertise(this)"
+                        class="mt-auto flex items-center gap-2 text-accent font-semibold text-xs uppercase tracking-widest hover:text-white transition-colors cursor-pointer hover-trigger">
+                        <span class="text-lg expertise-icon transition-transform">+</span>
+                        <span class="expertise-label" data-i18n="expertise.more">Bővebben</span>
+                    </button>
                 </div>
 
                 <!-- Közlekedési jog -->
-                <div class="group bg-stone-dark p-8 hover:bg-stone-dark/80 transition-colors reveal-text border-t border-white/5 h-full flex flex-col"
+                <div class="expertise-card group bg-stone-dark p-8 hover:bg-stone-dark/80 transition-colors reveal-text border-t border-white/5 h-full flex flex-col"
                     style="transition-delay: 0.2s;">
                     <h3 class="font-serif text-2xl mb-4 text-white" data-i18n="expertise.traffic.title">Közlekedési jog
                     </h3>
-                    <div class="text-[13px] text-gray-400 leading-relaxed font-sans" data-i18n="expertise.traffic.desc">
-                    </div>
+                    <div class="expertise-desc hidden text-[13px] text-gray-400 leading-relaxed font-sans mb-4"
+                        data-i18n="expertise.traffic.desc"></div>
+                    <button onclick="toggleExpertise(this)"
+                        class="mt-auto flex items-center gap-2 text-accent font-semibold text-xs uppercase tracking-widest hover:text-white transition-colors cursor-pointer hover-trigger">
+                        <span class="text-lg expertise-icon transition-transform">+</span>
+                        <span class="expertise-label" data-i18n="expertise.more">Bővebben</span>
+                    </button>
                 </div>
 
                 <!-- Követeléskezelés -->
-                <div class="group bg-stone-dark p-8 hover:bg-stone-dark/80 transition-colors reveal-text border-t border-white/5 h-full flex flex-col"
+                <div class="expertise-card group bg-stone-dark p-8 hover:bg-stone-dark/80 transition-colors reveal-text border-t border-white/5 h-full flex flex-col"
                     style="transition-delay: 0.3s;">
                     <h3 class="font-serif text-2xl mb-4 text-white" data-i18n="expertise.debt.title">Követeléskezelés
                     </h3>
-                    <div class="text-[13px] text-gray-400 leading-relaxed font-sans" data-i18n="expertise.debt.desc">
-                    </div>
+                    <div class="expertise-desc hidden text-[13px] text-gray-400 leading-relaxed font-sans mb-4"
+                        data-i18n="expertise.debt.desc"></div>
+                    <button onclick="toggleExpertise(this)"
+                        class="mt-auto flex items-center gap-2 text-accent font-semibold text-xs uppercase tracking-widest hover:text-white transition-colors cursor-pointer hover-trigger">
+                        <span class="text-lg expertise-icon transition-transform">+</span>
+                        <span class="expertise-label" data-i18n="expertise.more">Bővebben</span>
+                    </button>
                 </div>
 
                 <!-- Végrehajtási jog -->
                 <div
-                    class="group bg-stone-dark p-8 hover:bg-stone-dark/80 transition-colors reveal-text border-t border-white/5 h-full flex flex-col">
+                    class="expertise-card group bg-stone-dark p-8 hover:bg-stone-dark/80 transition-colors reveal-text border-t border-white/5 h-full flex flex-col">
                     <h3 class="font-serif text-2xl mb-4 text-white" data-i18n="expertise.enforcement.title">Végrehajtási
                         jog</h3>
-                    <div class="text-[13px] text-gray-400 leading-relaxed font-sans"
+                    <div class="expertise-desc hidden text-[13px] text-gray-400 leading-relaxed font-sans mb-4"
                         data-i18n="expertise.enforcement.desc"></div>
+                    <button onclick="toggleExpertise(this)"
+                        class="mt-auto flex items-center gap-2 text-accent font-semibold text-xs uppercase tracking-widest hover:text-white transition-colors cursor-pointer hover-trigger">
+                        <span class="text-lg expertise-icon transition-transform">+</span>
+                        <span class="expertise-label" data-i18n="expertise.more">Bővebben</span>
+                    </button>
                 </div>
 
                 <!-- Büntetőjog -->
-                <div class="group bg-stone-dark p-8 hover:bg-stone-dark/80 transition-colors reveal-text border-t border-white/5 h-full flex flex-col"
+                <div class="expertise-card group bg-stone-dark p-8 hover:bg-stone-dark/80 transition-colors reveal-text border-t border-white/5 h-full flex flex-col"
                     style="transition-delay: 0.1s;">
                     <h3 class="font-serif text-2xl mb-4 text-white" data-i18n="expertise.criminal.title">Büntetőjog</h3>
-                    <div class="text-[13px] text-gray-400 leading-relaxed font-sans"
+                    <div class="expertise-desc hidden text-[13px] text-gray-400 leading-relaxed font-sans mb-4"
                         data-i18n="expertise.criminal.desc"></div>
+                    <button onclick="toggleExpertise(this)"
+                        class="mt-auto flex items-center gap-2 text-accent font-semibold text-xs uppercase tracking-widest hover:text-white transition-colors cursor-pointer hover-trigger">
+                        <span class="text-lg expertise-icon transition-transform">+</span>
+                        <span class="expertise-label" data-i18n="expertise.more">Bővebben</span>
+                    </button>
                 </div>
 
                 <!-- Ingatlanjog -->
-                <div class="group bg-stone-dark p-8 hover:bg-stone-dark/80 transition-colors reveal-text border-t border-white/5 h-full flex flex-col"
+                <div class="expertise-card group bg-stone-dark p-8 hover:bg-stone-dark/80 transition-colors reveal-text border-t border-white/5 h-full flex flex-col"
                     style="transition-delay: 0.2s;">
                     <h3 class="font-serif text-2xl mb-4 text-white" data-i18n="expertise.real_estate.title">Ingatlanjog
                     </h3>
-                    <div class="text-[13px] text-gray-400 leading-relaxed font-sans"
+                    <div class="expertise-desc hidden text-[13px] text-gray-400 leading-relaxed font-sans mb-4"
                         data-i18n="expertise.real_estate.desc"></div>
+                    <button onclick="toggleExpertise(this)"
+                        class="mt-auto flex items-center gap-2 text-accent font-semibold text-xs uppercase tracking-widest hover:text-white transition-colors cursor-pointer hover-trigger">
+                        <span class="text-lg expertise-icon transition-transform">+</span>
+                        <span class="expertise-label" data-i18n="expertise.more">Bővebben</span>
+                    </button>
                 </div>
 
                 <!-- Társasági jog -->
-                <div class="group bg-stone-dark p-8 hover:bg-stone-dark/80 transition-colors reveal-text border-t border-white/5 h-full flex flex-col"
+                <div class="expertise-card group bg-stone-dark p-8 hover:bg-stone-dark/80 transition-colors reveal-text border-t border-white/5 h-full flex flex-col"
                     style="transition-delay: 0.3s;">
                     <h3 class="font-serif text-2xl mb-4 text-white" data-i18n="expertise.corporate.title">Társasági jog
                     </h3>
-                    <div class="text-[13px] text-gray-400 leading-relaxed font-sans"
+                    <div class="expertise-desc hidden text-[13px] text-gray-400 leading-relaxed font-sans mb-4"
                         data-i18n="expertise.corporate.desc"></div>
+                    <button onclick="toggleExpertise(this)"
+                        class="mt-auto flex items-center gap-2 text-accent font-semibold text-xs uppercase tracking-widest hover:text-white transition-colors cursor-pointer hover-trigger">
+                        <span class="text-lg expertise-icon transition-transform">+</span>
+                        <span class="expertise-label" data-i18n="expertise.more">Bővebben</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -1049,31 +1089,50 @@
             });
         });
 
+        // Modal Logic (global scope for onclick handlers)
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                modal.querySelector('.modal-content').classList.remove('translate-y-8');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                modal.querySelector('.modal-content').classList.add('translate-y-8');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Expertise toggle (global scope)
+        function toggleExpertise(btn) {
+            const card = btn.closest('.expertise-card');
+            const desc = card.querySelector('.expertise-desc');
+            const icon = btn.querySelector('.expertise-icon');
+            const label = btn.querySelector('.expertise-label');
+            const isOpen = !desc.classList.contains('hidden');
+
+            if (isOpen) {
+                desc.classList.add('hidden');
+                icon.textContent = '+';
+                icon.style.transform = '';
+            } else {
+                desc.classList.remove('hidden');
+                icon.textContent = '−';
+                icon.style.transform = '';
+            }
+        }
+
         // Initialize Language
         document.addEventListener('DOMContentLoaded', () => {
             const currentLang = localStorage.getItem('preferredLanguage') || 'hu';
             setLanguage(currentLang);
 
-            // Modal Logic
-            function openModal(modalId) {
-                const modal = document.getElementById(modalId);
-                if (modal) {
-                    modal.classList.remove('opacity-0', 'pointer-events-none');
-                    modal.querySelector('.modal-content').classList.remove('translate-y-8');
-                    document.body.style.overflow = 'hidden';
-                }
-            }
-
-            function closeModal(modalId) {
-                const modal = document.getElementById(modalId);
-                if (modal) {
-                    modal.classList.add('opacity-0', 'pointer-events-none');
-                    modal.querySelector('.modal-content').classList.add('translate-y-8');
-                    document.body.style.overflow = '';
-                }
-            }
-
-            // Close on ESC
+            // Close modals on ESC
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') {
                     document.querySelectorAll('[id$="-modal"]').forEach(modal => {
