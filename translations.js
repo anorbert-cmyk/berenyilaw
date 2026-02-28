@@ -121,7 +121,8 @@ const translations = {
         "footer.bar_info": "Ez a honlap a Pest Vármegyei Ügyvédi Kamarába bejegyzett Berényi Kristóf Ügyvédi Iroda tulajdona.",
         "footer.rules": "Az ügyvédi honlap tartalmára és megjelenésére vonatkozó szabályok a <a href=\"https://www.magyarugyvedikamara.hu\" target=\"_blank\" class=\"text-accent hover:underline\">www.magyarugyvedikamara.hu</a> honlapon találhatóak.",
         "footer.copyright": "&copy; 2026 Berényi Kristóf Ügyvédi Iroda",
-        "footer.privacy": "Adatvédelmi tájékoztató"
+        "footer.privacy": "Adatvédelmi tájékoztató",
+        "footer.data_processing": "Adatkezelési Szabályzat"
     },
     en: {
         // Navigation
@@ -245,7 +246,8 @@ const translations = {
         "footer.bar_info": "This website is the property of Berényi Kristóf Law Firm, registered with the Pest County Bar Association.",
         "footer.rules": "The rules regarding the content and appearance of lawyers' websites can be found at <a href=\"https://www.magyarugyvedikamara.hu\" target=\"_blank\" class=\"text-accent hover:underline\">www.magyarugyvedikamara.hu</a>.",
         "footer.copyright": "&copy; 2026 Berényi Kristóf Law Firm",
-        "footer.privacy": "Privacy Policy"
+        "footer.privacy": "Privacy Policy",
+        "footer.data_processing": "Data Processing Policy"
     },
     fr: {
         // Navigation
@@ -369,6 +371,7 @@ const translations = {
         "footer.bar_info": "Ce site web est la propriété du Cabinet Berényi Kristóf, inscrit au Barreau du Comté de Pest.",
         "footer.rules": "Les règles relatives au contenu et à l'apparence des sites web d'avocats sont disponibles sur <a href=\"https://www.magyarugyvedikamara.hu\" target=\"_blank\" class=\"text-accent hover:underline\">www.magyarugyvedikamara.hu</a>.",
         "footer.copyright": "&copy; 2026 Cabinet Berényi Kristóf",
-        "footer.privacy": "Politique de Confidentialité"
+        "footer.privacy": "Politique de Confidentialité",
+        "footer.data_processing": "Politique de traitement des données"
     }
 };
