@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adatvédelmi tájékoztató | Berényi Kristóf Ügyvédi Iroda</title>
-    <meta name="description" content="Adatvédelmi és cookie tájékoztató - Berényi Kristóf Ügyvédi Iroda">
+    <title>Adatkezelési Szabályzat | Berényi Kristóf Ügyvédi Iroda</title>
+    <meta name="description" content="Adatkezelési Szabályzat - Berényi Kristóf Ügyvédi Iroda">
     <meta name="robots" content="noindex, follow">
 
     <!-- Fonts -->
@@ -25,7 +25,7 @@
                         'paper': '#FAF9F6',
                         'ink': '#1A1A1A',
                         'accent': '#B8860B',
-                        'stone-dark': '#4A4A4A',
+                        'stone-dark': '#2C2C2C',
                     },
                     fontFamily: {
                         'serif': ['Cormorant Garamond', 'serif'],
@@ -39,6 +39,25 @@
     <style>
         body {
             background-color: #FAF9F6;
+        }
+
+        /* Egyedi görgetősáv a táblázathoz mobilon */
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
         }
     </style>
 </head>
@@ -58,103 +77,667 @@
     </nav>
 
     <!-- Content -->
-    <main class="max-w-4xl mx-auto px-6 py-16 md:py-24">
+    <main class="max-w-5xl mx-auto px-6 py-16 md:py-24">
         <span class="text-accent text-sm font-bold uppercase tracking-widest block mb-4">Jogi tájékoztató</span>
-        <h1 class="font-serif text-4xl md:text-5xl mb-8">Adatvédelmi és cookie tájékoztató</h1>
+        <h1 class="font-serif text-4xl md:text-6xl mb-12">Adatkezelési Szabályzat</h1>
 
-        <div class="prose prose-lg max-w-none text-gray-600 space-y-8">
+        <div class="prose prose-lg max-w-none text-gray-600 space-y-12">
+            <!-- Bevezető -->
             <section>
-                <h2 class="font-serif text-2xl text-ink mb-4">1. Adatkezelő adatai</h2>
+                <p class="mb-4">
+                    A <strong class="text-ink">Berényi Kristóf Ügyvédi Iroda</strong> (székhely: 2040 Budaörs, Ifjúság
+                    utca 18. 1/6.; adószám: 19311391-2-13; telefonszám: +36-30-177-16-79; e-mail: <a
+                        href="mailto:office@berenyi-law.hu"
+                        class="text-accent hover:text-ink transition-colors">office@berenyi-law.hu</a>;
+                    továbbiakban: <strong class="text-ink">Adatkezelő</strong>) a hatályos jogszabályi rendelkezéseknek
+                    való maradéktalan megfelelés érdekében a jelen adatkezelési szabályzatot (továbbiakban: Szabályzat)
+                    alkotja.
+                </p>
+                <p class="mb-4">
+                    Adatkezelő az ügyfelek által nyújtott személyes és különleges adatokat, információkat a hatályos
+                    Európai uniós és magyar adatvédelmi jogszabályok (különösen az információs önrendelkezési jogról és
+                    az információszabadságról szóló 2011. évi CXII. törvény, az ügyvédi tevékenységről szóló 2017. évi
+                    LXXVIII. törvény) és egyéb alkalmazandó jogszabályok teljes körű betartásával kezeli. A Szabályzat
+                    rendelkezéseinek kialakításakor az Adatkezelő különös tekintettel vette figyelembe az Európai
+                    Parlament és a Tanács 2016/679. sz. Rendeletében (továbbiakban: Általános Adatvédelmi Rendelet vagy
+                    GDPR) foglaltakat.
+                </p>
                 <p>
-                    <strong class="text-ink">Név:</strong> Berényi Kristóf Ügyvédi Iroda<br>
-                    <strong class="text-ink">Székhely:</strong> 2040 Budaörs, Ifjúság utca 18. 1/6.<br>
-                    <strong class="text-ink">Email:</strong> office@berenyi-law.hu<br>
-                    <strong class="text-ink">Telefon:</strong> +36 (30) 177 1679<br>
-                    <strong class="text-ink">Kamarai bejegyzés:</strong> Pest Vármegyei Ügyvédi Kamara
+                    Adatkezelő weboldalára (<a href="https://www.berenyi-law.hu" target="_blank"
+                        class="text-accent hover:text-ink transition-colors">https://www.berenyi-law.hu</a>) látogató,
+                    illetve az Adatkezelővel bármilyen módon kapcsolatba kerülő, továbbá a kapcsolatfelvételt követően
+                    esetlegesen megbízási jogviszonyt (továbbiakban: Jogviszony) létesítő személy (továbbiakban:
+                    <strong class="text-ink">Ügyfél</strong>) önkéntes hozzájárulással megadott személyes és
+                    különleges adatainak kezelésével kapcsolatos kérdésekről, így az adatok kezelésével kapcsolatos
+                    tényekről, az adatkezelések céljáról, jogalapjáról, időtartamáról, a személyes adatok
+                    megismerésére jogosultak köréről, illetve az adatfeldolgozásról az adatkezelés megkezdése előtt
+                    jelen Szabályzat nyújt tájékoztatást. Jelen Szabályzat kiterjed az Ügyfél az adatkezeléssel
+                    kapcsolatos jogaira és jogorvoslati lehetőségeire is. Adatkezelő kiemeli, hogy a kezelt adatokat
+                    biztonságosan tárolja, továbbá Ügyfél számára annak kérése esetén felvilágosítást ad a tárolt
+                    adatokról és Ügyfél az adatok törlését – amennyiben annak nyilvántartását, tárolását, megőrzését,
+                    továbbítását jogszabály nem írja elő - bármikor, ingyenesen és indokolás nélkül kérheti.
                 </p>
             </section>
 
+            <!-- 1. Adatok -->
             <section>
-                <h2 class="font-serif text-2xl text-ink mb-4">2. Kezelt személyes adatok köre</h2>
-                <p>A weboldalon keresztül az alábbi személyes adatokat kezeljük:</p>
-                <ul class="list-disc pl-6 space-y-2">
-                    <li><strong class="text-ink">Kapcsolatfelvételi űrlap:</strong> név, email cím, telefonszám, üzenet
-                        tartalma</li>
-                    <li><strong class="text-ink">Technikai adatok:</strong> IP cím, böngésző típusa, látogatás időpontja
-                    </li>
+                <h2 class="font-serif text-3xl text-ink mb-6">1. Az Adatkezelő adatai</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 bg-white p-8 border border-ink/5">
+                    <div class="sm:col-span-2">
+                        <span class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Az adatok
+                            kezelője</span>
+                        <span class="block text-xl font-serif text-ink">Berényi Kristóf Ügyvédi Iroda</span>
+                    </div>
+                    <div>
+                        <span
+                            class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Székhely</span>
+                        <span class="block text-gray-700">2040 Budaörs, Ifjúság utca 18. 1/6.</span>
+                    </div>
+                    <div>
+                        <span class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Nyilvántartó
+                            kamara</span>
+                        <span class="block text-gray-700">Pest Vármegyei Ügyvédi Kamara</span>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <span
+                            class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Elérhetőségek</span>
+                        <span class="block text-gray-700">E-mail: <a href="mailto:office@berenyi-law.hu"
+                                class="text-accent hover:text-ink transition-colors">office@berenyi-law.hu</a></span>
+                        <span class="block text-gray-700">Telefon: +36-30-177-16-79</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Vonatkozó Szabályok -->
+            <section>
+                <h2 class="font-serif text-3xl text-ink mb-4">2. Vonatkozó Szabályok</h2>
+                <p class="mb-4">Adatkezelő kötelezettséget vállal arra, hogy ez irányú tevékenységét a mindenkor
+                    hatályos jogszabályok szerint végzi. Ezek a jelen Szabályzat elfogadásakor különösen, de nem
+                    kizárólagosan az alábbiak:</p>
+                <ul class="list-disc pl-6 space-y-2 text-gray-600">
+                    <li>Az Európai Parlament és a Tanács (EU) 2016/679 rendelete (2016. április 27.) a természetes
+                        személyeknek a személyes adatok kezelése tekintetében történő védelméről és az ilyen adatok
+                        szabad áramlásáról, valamint a 95/46/EK rendelet hatályon kívül helyezéséről (GDPR).</li>
+                    <li>2011. évi CXII. törvény az információs önrendelkezési jogról és az információszabadságról.</li>
+                    <li>2017. évi LXXVIII. törvény az ügyvédi tevékenységről.</li>
+                    <li>2000. évi C. törvény a számvitelről.</li>
                 </ul>
             </section>
 
+            <!-- 3. Fogalmak -->
             <section>
-                <h2 class="font-serif text-2xl text-ink mb-4">3. Adatkezelés célja és jogalapja</h2>
-                <p>Az adatkezelés célja a kapcsolatfelvételi kérések megválaszolása és az ügyvédi szolgáltatás nyújtása.
-                    Az adatkezelés jogalapja az Ön hozzájárulása (GDPR 6. cikk (1) a) pont), illetve az ügyvédi
-                    megbízás teljesítése esetén a szerződés teljesítése (GDPR 6. cikk (1) b) pont).</p>
+                <h2 class="font-serif text-3xl text-ink mb-4">3. Fogalmak</h2>
+                <p class="mb-6 italic text-gray-500">A 2011. évi CXII. törvény 3. § alapján:</p>
+                <div class="space-y-4">
+                    <p><strong class="text-ink">Érintett:</strong> bármely meghatározott, személyes adat alapján
+                        azonosított vagy közvetlenül vagy közvetve azonosítható természetes személy.</p>
+                    <p><strong class="text-ink">Személyes adat:</strong> az érintettel kapcsolatba hozható adat –
+                        különösen az érintett neve, azonosító jele, valamint egy vagy több fizikai, fiziológiai,
+                        mentális, gazdasági, kulturális vagy szociális azonosságára jellemző ismeret –, valamint az
+                        adatból levonható, az érintettre vonatkozó következtetés.</p>
+                    <p><strong class="text-ink">Különleges adat:</strong> A faji eredetre, a nemzeti és etnikai
+                        kisebbséghez tartozásra, a politikai véleményre vagy pártállásra, a vallásos vagy más
+                        világnézeti
+                        meggyőződésre, az érdek-képviseleti szervezeti tagságra, a szexuális életre vonatkozó személyes
+                        adat. Az egészségi állapotra, a kóros szenvedélyre vonatkozó személyes adat, valamint a bűnügyi
+                        személyes adat.</p>
+                    <p><strong class="text-ink">Bűnügyi személyes adat:</strong> a büntetőeljárás során vagy azt
+                        megelőzően a bűncselekménnyel vagy a büntetőeljárással összefüggésben, a büntetőeljárás
+                        lefolytatására, illetve a bűncselekmények felderítésére jogosult szerveknél, továbbá a
+                        büntetés-végrehajtás szervezeténél keletkezett, az érintettel kapcsolatba hozható, valamint a
+                        büntetett előéletre vonatkozó személyes adat.</p>
+                    <p><strong class="text-ink">Közérdekű adat:</strong> az állami vagy helyi önkormányzati feladatot,
+                        valamint jogszabályban meghatározott egyéb közfeladatot ellátó szerv vagy személy kezelésében
+                        lévő és tevékenységére vonatkozó vagy közfeladatának ellátásával összefüggésben keletkezett, a
+                        személyes adat fogalma alá nem eső, bármilyen módon vagy formában rögzített információ vagy
+                        ismeret.</p>
+                    <p><strong class="text-ink">Közérdekből nyilvános adat:</strong> a közérdekű adat fogalma alá nem
+                        tartozó minden olyan adat, amelynek nyilvánosságra hozatalát, megismerhetőségét vagy
+                        hozzáférhetővé tételét törvény közérdekből elrendeli.</p>
+                    <p><strong class="text-ink">Hozzájárulás:</strong> az érintett akaratának önkéntes és határozott
+                        kinyilvánítása, amely megfelelő tájékoztatáson alapul, és amellyel félreérthetetlen
+                        beleegyezését
+                        adja a rá vonatkozó személyes adatok – teljes körű vagy egyes műveletekre kiterjedő –
+                        kezeléséhez.</p>
+                    <p><strong class="text-ink">Tiltakozás:</strong> az érintett nyilatkozata, amellyel személyes
+                        adatainak kezelését kifogásolja, és az adatkezelés megszüntetését, illetve a kezelt adatok
+                        törlését kéri.</p>
+                    <p><strong class="text-ink">Adatkezelő:</strong> az a természetes vagy jogi személy, illetve jogi
+                        személyiséggel nem rendelkező szervezet, aki vagy amely önállóan vagy másokkal együtt az adatok
+                        kezelésének célját meghatározza, az adatkezelésre (beleértve a felhasznált eszközt) vonatkozó
+                        döntéseket meghozza és végrehajtja, vagy az általa megbízott adatfeldolgozóval végrehajtatja.
+                    </p>
+                    <p><strong class="text-ink">Adatkezelés:</strong> az alkalmazott eljárástól függetlenül az adatokon
+                        végzett bármely művelet vagy a műveletek összessége, így különösen gyűjtése, felvétele,
+                        rögzítése, rendszerezése, tárolása, megváltoztatása, felhasználása, lekérdezése, továbbítása,
+                        nyilvánosságra hozatala, összehangolása vagy összekapcsolása, zárolása, törlése és
+                        megsemmisítése.</p>
+                    <p><strong class="text-ink">Adattovábbítás:</strong> az adat meghatározott harmadik személy számára
+                        történő hozzáférhetővé tétele.</p>
+                    <p><strong class="text-ink">Nyilvánosságra hozatal:</strong> az adat bárki számára történő
+                        hozzáférhetővé tétele.</p>
+                    <p><strong class="text-ink">Adattörlés:</strong> az adatok felismerhetetlenné tétele oly módon,
+                        hogy a helyreállításuk többé nem lehetséges.</p>
+                    <p><strong class="text-ink">Adatmegjelölés:</strong> az adat azonosító jelzéssel ellátása annak
+                        megkülönböztetése céljából.</p>
+                    <p><strong class="text-ink">Adatzárolás:</strong> az adat azonosító jelzéssel ellátása további
+                        kezelésének végleges vagy meghatározott időre történő korlátozása céljából.</p>
+                    <p><strong class="text-ink">Adatmegsemmisítés:</strong> az adatokat tartalmazó adathordozó teljes
+                        fizikai megsemmisítése.</p>
+                    <p><strong class="text-ink">Adatfeldolgozás:</strong> az adatkezelési műveletekhez kapcsolódó
+                        technikai feladatok elvégzése, függetlenül a műveletek végrehajtásához alkalmazott módszertől és
+                        eszköztől, valamint az alkalmazás helyétől, feltéve hogy a technikai feladatot az adatokon
+                        végzik.</p>
+                    <p><strong class="text-ink">Adatfeldolgozó:</strong> az a természetes vagy jogi személy, illetve
+                        jogi személyiséggel nem rendelkező szervezet, aki vagy amely az adatkezelővel kötött szerződése
+                        alapján – beleértve a jogszabály rendelkezése alapján történő szerződéskötést is – adatok
+                        feldolgozását végzi.</p>
+                    <p><strong class="text-ink">Harmadik személy:</strong> olyan természetes vagy jogi személy, illetve
+                        jogi személyiséggel nem rendelkező szervezet, aki vagy amely nem azonos az érintettel, az
+                        adatkezelővel vagy az adatfeldolgozóval.</p>
+                    <p><strong class="text-ink">EGT-állam:</strong> az Európai Unió tagállama és az Európai Gazdasági
+                        Térségről szóló megállapodásban részes más állam.</p>
+                    <p><strong class="text-ink">Harmadik ország:</strong> minden olyan állam, amely nem EGT-állam.</p>
+                </div>
             </section>
 
+            <!-- 4. Adatkezelési alapelvek -->
             <section>
-                <h2 class="font-serif text-2xl text-ink mb-4">4. Adatkezelés időtartama</h2>
-                <p>A kapcsolatfelvételi űrlapon megadott adatokat a megkeresés megválaszolását követő 1 évig,
-                    ügyvédi megbízás esetén a megbízás megszűnésétől számított 5 évig őrizzük meg a
-                    jogszabályi kötelezettségeknek megfelelően.</p>
-            </section>
-
-            <section>
-                <h2 class="font-serif text-2xl text-ink mb-4">5. Az érintett jogai</h2>
-                <p>Ön jogosult:</p>
-                <ul class="list-disc pl-6 space-y-2">
-                    <li>Tájékoztatást kérni a kezelt adatairól</li>
-                    <li>Kérni adatai helyesbítését vagy törlését</li>
-                    <li>Az adatkezelés korlátozását kérni</li>
-                    <li>Tiltakozni az adatkezelés ellen</li>
-                    <li>Adatait hordozható formátumban megkapni</li>
-                    <li>Panaszt tenni a Nemzeti Adatvédelmi és Információszabadság Hatóságnál (NAIH)</li>
+                <h2 class="font-serif text-3xl text-ink mb-4">4. Adatkezelési alapelvek</h2>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                    <li>Ahhoz az érintett hozzájárul (GDPR 6. cikk 1. (bek). a.) pont) és különleges adat esetén GDPR 9.
+                        cikk 2. (bek.) a.) pontja alapján)</li>
+                    <li>Szerződés teljesítése érdekében szükséges, (GDPR 6. cikk 1. (bek.) b.) pont) vagy</li>
+                    <li>Azt törvény vagy – törvény felhatalmazása alapján, az abban meghatározott körben – helyi
+                        önkormányzat rendelete elrendeli. (GDPR 6. cikk 1. (bek.) c.) pont).</li>
                 </ul>
-            </section>
-
-            <section>
-                <h2 class="font-serif text-2xl text-ink mb-4">6. Cookie-k (sütik)</h2>
-                <p>Weboldalunk kizárólag a működéshez szükséges technikai cookie-kat használ.
-                    Nem alkalmazunk analitikai vagy marketing célú cookie-kat. A technikai cookie-k
-                    az oldal bezárásakor automatikusan törlődnek.</p>
-            </section>
-
-            <section>
-                <h2 class="font-serif text-2xl text-ink mb-4">7. Adatbiztonság</h2>
-                <p>Az Ön adatainak védelme érdekében megfelelő technikai és szervezési intézkedéseket
-                    alkalmazunk, beleértve az SSL/TLS titkosítást és a hozzáférés-korlátozást.</p>
-            </section>
-
-            <section>
-                <h2 class="font-serif text-2xl text-ink mb-4">8. Kapcsolat</h2>
-                <p>Adatvédelmi kérdéseivel forduljon hozzánk az
-                    <a href="mailto:office@berenyi-law.hu" class="text-accent hover:underline">office@berenyi-law.hu</a>
-                    email címen.
+                <p class="mb-2">Cselekvőképtelen és korlátozottan cselekvőképes kiskorú személy nyilatkozatához a
+                    törvényes képviselőjének hozzájárulása szükséges, kivéve azon szolgáltatás részeket, ahol a
+                    nyilatkozat a mindennapi életben tömegesen előforduló regisztrációt céloz, és különösebb
+                    megfontolást
+                    nem igényel.</p>
+                <p class="mb-2">Személyes és különleges adatot kezelni csak meghatározott célból, jog gyakorlása és
+                    kötelezettség teljesítése érdekében lehet. Az adatkezelésnek minden szakaszban meg kell felelnie e
+                    célnak.</p>
+                <p class="mb-2">Csak olyan személyes és különleges adat kezelhető, amely az adatkezelés céljának
+                    megvalósulásához elengedhetetlen, a cél elérésére alkalmas, csak a cél megvalósulásához szükséges
+                    mértékben és ideig.</p>
+                <p class="mb-2">Személyes és különleges adat csak megfelelő tájékoztatáson alapuló beleegyezéssel
+                    kezelhető. Ügyfelet – egyértelműen, közérthetően és részletesen – tájékoztatni kell az adatai
+                    kezelésével kapcsolatos minden tényről.</p>
+                <p class="mb-4">A kezelt személyes és különleges adatoknak meg kell felelniük az alábbi
+                    követelményeknek:
                 </p>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                    <li>Felvételük és kezelésük tisztességes és törvényes;</li>
+                    <li>Pontosak, teljesek és ha szükséges időszerűek;</li>
+                    <li>Tárolásuk módja alkalmas arra, hogy az érintettet csak a tárolás céljához szükséges ideig
+                        lehessen azonosítani. Általános és egységes személyazonosító jel alkalmazása tilos.</li>
+                </ul>
+                <p>A személyes és különleges adatok akkor továbbíthatók, ha az érintett ahhoz hozzájárult, vagy
+                    törvény azt megengedi. Az EGT-államokba irányuló adattovábbítást úgy kell tekinteni, mintha
+                    Magyarország területén belüli adattovábbításra kerülne sor.</p>
             </section>
 
-            <p class="text-sm text-gray-500 pt-8 border-t border-ink/10">
-                Utolsó frissítés: 2025. január
-            </p>
+            <!-- 5. Adatkezelő által kezelt adatok (TÁBLÁZAT) -->
+            <section>
+                <h2 class="font-serif text-3xl text-ink mb-6">5. Adatkezelő által kezelt adatok és jogalapjuk</h2>
+
+                <div class="overflow-x-auto custom-scrollbar my-8">
+                    <table class="w-full text-left border-collapse text-sm whitespace-normal">
+                        <thead>
+                            <tr
+                                class="border-b-2 border-ink text-ink font-semibold uppercase tracking-widest text-[11px]">
+                                <th class="p-4 pl-0">Adat</th>
+                                <th class="p-4">Adat forrása</th>
+                                <th class="p-4">Adatkezelés célja</th>
+                                <th class="p-4">Adatkezelés jogalapja</th>
+                                <th class="p-4 pr-0 min-w-[250px]">Adatkezelés időtartama</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-ink/10 text-gray-600">
+                            <!-- Sor 1: Név -->
+                            <tr class="hover:bg-white transition-colors">
+                                <td class="p-4 pl-0 font-medium text-ink align-top">név</td>
+                                <td class="p-4 align-top">Ügyfél</td>
+                                <td class="p-4 align-top">
+                                    <ul class="list-none space-y-1">
+                                        <li>a) kapcsolatfelvétel</li>
+                                        <li>b) ajánlatkérés</li>
+                                        <li>c) időpont foglalás</li>
+                                        <li>d) szerződés létrehozása</li>
+                                        <li>e) szerződés teljesítése</li>
+                                        <li>f) számlázás</li>
+                                    </ul>
+                                </td>
+                                <td class="p-4 align-top">
+                                    <ul class="list-disc pl-4 space-y-1">
+                                        <li>érintett hozzájárulása: a) b) c) célok esetében</li>
+                                        <li>szerződés teljesítése: d) e) f) célok esetében</li>
+                                    </ul>
+                                </td>
+                                <td class="p-4 pr-0 align-top">
+                                    <ul class="list-disc pl-4 space-y-1">
+                                        <li>adattörlésre vonatkozó kérelemig: a) b) c)</li>
+                                        <li>szerződés teljesítését követő 5 évig: d) e)</li>
+                                        <li>Számviteli tv-ben meghatározott 8 évig: f)</li>
+                                        <li>szerződés teljesítését követő 5, vagy 10 évig (Ügyvédi tv.): d) e)</li>
+                                    </ul>
+                                </td>
+                            </tr>
+
+                            <!-- Sor 2: Születési hely, idő -->
+                            <tr class="hover:bg-white transition-colors">
+                                <td class="p-4 pl-0 font-medium text-ink align-top">születési hely, idő</td>
+                                <td class="p-4 align-top">Ügyfél</td>
+                                <td class="p-4 align-top">
+                                    <ul class="list-none space-y-1">
+                                        <li>a) szerződés létrehozása</li>
+                                        <li>b) szerződés teljesítése</li>
+                                    </ul>
+                                </td>
+                                <td class="p-4 align-top">
+                                    szerződés teljesítése: a) b) célok esetében
+                                </td>
+                                <td class="p-4 pr-0 align-top">
+                                    <ul class="list-disc pl-4 space-y-1">
+                                        <li>szerződés teljesítését követő 5 évig (Ptk. elévülés)</li>
+                                        <li>szerződés teljesítését követő 5, vagy 10 évig (Ügyvédi tv.)</li>
+                                    </ul>
+                                </td>
+                            </tr>
+
+                            <!-- Sor 3: Édesanyja neve -->
+                            <tr class="hover:bg-white transition-colors">
+                                <td class="p-4 pl-0 font-medium text-ink align-top">édesanyja neve</td>
+                                <td class="p-4 align-top">Ügyfél</td>
+                                <td class="p-4 align-top">
+                                    <ul class="list-none space-y-1">
+                                        <li>a) szerződés létrehozása</li>
+                                        <li>b) szerződés teljesítése</li>
+                                    </ul>
+                                </td>
+                                <td class="p-4 align-top">
+                                    szerződés teljesítése: a) b) követése
+                                </td>
+                                <td class="p-4 pr-0 align-top">
+                                    <ul class="list-disc pl-4 space-y-1">
+                                        <li>szerződés teljesítését követő 5 évig (Ptk. elévülés)</li>
+                                        <li>szerződés teljesítését követő 5, vagy 10 évig (Ügyvédi tv.)</li>
+                                    </ul>
+                                </td>
+                            </tr>
+
+                            <!-- Sor 4: Adószám, adóazonosító -->
+                            <tr class="hover:bg-white transition-colors">
+                                <td class="p-4 pl-0 font-medium text-ink align-top">adószám, adóazonosító jel</td>
+                                <td class="p-4 align-top">Ügyfél</td>
+                                <td class="p-4 align-top">
+                                    <ul class="list-none space-y-1">
+                                        <li>a) szerződés létrehozása</li>
+                                        <li>b) szerződés teljesítése</li>
+                                    </ul>
+                                </td>
+                                <td class="p-4 align-top">
+                                    szerződés teljesítése: a) b) célok esetében
+                                </td>
+                                <td class="p-4 pr-0 align-top">
+                                    <ul class="list-disc pl-4 space-y-1">
+                                        <li>szerződés teljesítését követő 5 évig (Ptk. elévülés)</li>
+                                        <li>szerződés teljesítését követő 5, vagy 10 évig (Ügyvédi tv.)</li>
+                                    </ul>
+                                </td>
+                            </tr>
+
+                            <!-- Sor 5: Személyi azonosító szám -->
+                            <tr class="hover:bg-white transition-colors">
+                                <td class="p-4 pl-0 font-medium text-ink align-top">személyi azonosító szám</td>
+                                <td class="p-4 align-top">Ügyfél</td>
+                                <td class="p-4 align-top">
+                                    <ul class="list-none space-y-1">
+                                        <li>a) szerződés létrehozása</li>
+                                        <li>b) szerződés teljesítése</li>
+                                    </ul>
+                                </td>
+                                <td class="p-4 align-top">
+                                    szerződés teljesítése: a) b) célok esetén
+                                </td>
+                                <td class="p-4 pr-0 align-top">
+                                    <ul class="list-disc pl-4 space-y-1">
+                                        <li>szerződés teljesítését követő 5 évig (Ptk. elévülés)</li>
+                                        <li>szerződés teljesítését követő 5, vagy 10 évig (Ügyvédi tv.)</li>
+                                    </ul>
+                                </td>
+                            </tr>
+
+                            <!-- Sor 6: Különleges adat -->
+                            <tr class="hover:bg-white transition-colors">
+                                <td class="p-4 pl-0 font-medium text-ink align-top">különleges adat</td>
+                                <td class="p-4 align-top">Ügyfél</td>
+                                <td class="p-4 align-top">
+                                    <ul class="list-none space-y-1">
+                                        <li>a) kapcsolatfelvétel</li>
+                                        <li>b) ajánlatkérés</li>
+                                        <li>c) szerződés létrehozása</li>
+                                        <li>d) szerződés teljesítése</li>
+                                    </ul>
+                                </td>
+                                <td class="p-4 align-top">
+                                    <ul class="list-disc pl-4 space-y-1">
+                                        <li>szerződés teljesítése: a) b) c) d)</li>
+                                        <li>érintett hozzájárulása: a) b) c) d)</li>
+                                    </ul>
+                                </td>
+                                <td class="p-4 pr-0 align-top">
+                                    <ul class="list-disc pl-4 space-y-1">
+                                        <li>szerződés teljesítését követő 5 évig</li>
+                                        <li>szerződés teljesítését követő 5, vagy 10 évig (Ügyvédi tv.)</li>
+                                    </ul>
+                                </td>
+                            </tr>
+
+                            <!-- Sor 7: e-mail cím -->
+                            <tr class="hover:bg-white transition-colors">
+                                <td class="p-4 pl-0 font-medium text-ink align-top">e-mail cím</td>
+                                <td class="p-4 align-top">Ügyfél</td>
+                                <td class="p-4 align-top">
+                                    <ul class="list-none space-y-1">
+                                        <li>a) ajánlatkérés</li>
+                                        <li>b) kapcsolatfelvétel</li>
+                                        <li>c) időpont foglalás</li>
+                                        <li>d) szerződés létrehozása, teljesítése</li>
+                                        <li>e) kapcsolattartás</li>
+                                    </ul>
+                                </td>
+                                <td class="p-4 align-top">
+                                    <ul class="list-disc pl-4 space-y-1">
+                                        <li>érintett hozzájárulása: a) b) c) e)</li>
+                                        <li>szerződés teljesítése: d)</li>
+                                    </ul>
+                                </td>
+                                <td class="p-4 pr-0 align-top">
+                                    <ul class="list-disc pl-4 space-y-1">
+                                        <li>adattörlésre vonatkozó kérelemig: a) b) c) e)</li>
+                                        <li>szerződés teljesítését követő 5 évig: d)</li>
+                                        <li>szerződés teljesítését követő 5, vagy 10 évig (Ügyvédi tv.): d)</li>
+                                    </ul>
+                                </td>
+                            </tr>
+
+                            <!-- Sor 8: telefonszám -->
+                            <tr class="hover:bg-white transition-colors">
+                                <td class="p-4 pl-0 font-medium text-ink align-top">telefonszám</td>
+                                <td class="p-4 align-top">Ügyfél</td>
+                                <td class="p-4 align-top">
+                                    <ul class="list-none space-y-1">
+                                        <li>a) kapcsolatfelvétel, kapcsolattartás</li>
+                                        <li>b) ajánlatkérés</li>
+                                        <li>c) szerződés létrehozása, teljesítése</li>
+                                    </ul>
+                                </td>
+                                <td class="p-4 align-top">
+                                    <ul class="list-disc pl-4 space-y-1">
+                                        <li>érintett hozzájárulása: a) b) c)</li>
+                                        <li>szerződés teljesítése: c)</li>
+                                    </ul>
+                                </td>
+                                <td class="p-4 pr-0 align-top">
+                                    <ul class="list-disc pl-4 space-y-1">
+                                        <li>adattörlésre vonatkozó kérelemig: a) b) c)</li>
+                                        <li>szerződés teljesítését követő 5 évig: c)</li>
+                                        <li>szerződés teljesítését követő 5, vagy 10 évig (Ügyvédi tv.): c)</li>
+                                    </ul>
+                                </td>
+                            </tr>
+
+                            <!-- Sor 9: lakcím -->
+                            <tr class="hover:bg-white transition-colors">
+                                <td class="p-4 pl-0 font-medium text-ink align-top">lakcím</td>
+                                <td class="p-4 align-top">Ügyfél</td>
+                                <td class="p-4 align-top">
+                                    <ul class="list-none space-y-1">
+                                        <li>a) szerződés létrehozása</li>
+                                        <li>b) szerződés teljesítése</li>
+                                        <li>c) számlázás</li>
+                                    </ul>
+                                </td>
+                                <td class="p-4 align-top">
+                                    <ul class="list-disc pl-4 space-y-1">
+                                        <li>szerződés teljesítése: a) b)</li>
+                                        <li>jogi kötelezettség (számlázás): c)</li>
+                                    </ul>
+                                </td>
+                                <td class="p-4 pr-0 align-top">
+                                    <ul class="list-disc pl-4 space-y-1">
+                                        <li>szerződés teljesítését követő 5 évig: a) b)</li>
+                                        <li>Számviteli tv-ben meghatározott 8 évig: c)</li>
+                                        <li>szerződés teljesítését követő 5, vagy 10 évig (Ügyvédi tv.): a) b)</li>
+                                    </ul>
+                                </td>
+                            </tr>
+
+                            <!-- Sor 10: bankszámla adatok -->
+                            <tr class="hover:bg-white transition-colors">
+                                <td class="p-4 pl-0 font-medium text-ink align-top">bankszámla adatok (név, szám)</td>
+                                <td class="p-4 align-top">Ügyfél</td>
+                                <td class="p-4 align-top">
+                                    <ul class="list-none space-y-1">
+                                        <li>a) szerződés létrehozása</li>
+                                        <li>b) szerződés teljesítése</li>
+                                        <li>c) számlázás</li>
+                                        <li>d) ellenérték megfizetése</li>
+                                    </ul>
+                                </td>
+                                <td class="p-4 align-top">
+                                    szerződés teljesítése: a) b) c) d)
+                                </td>
+                                <td class="p-4 pr-0 align-top">
+                                    <ul class="list-disc pl-4 space-y-1">
+                                        <li>szerződés teljesítését követő 5 évig: a) b) d)</li>
+                                        <li>Számviteli tv-ben meghatározott 8 évig: c)</li>
+                                        <li>szerződés teljesítését követő 5, vagy 10 évig (Ügyvédi tv.): b) d)</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="bg-white border border-ink/5 p-8 mt-12">
+                    <p class="font-serif text-2xl text-ink mb-4">Cookie (Süti) tájékoztató:</p>
+                    <p class="text-gray-600">
+                        A weboldal cookie-kat (sütik) használ. A süti a webszerver által küldött, változó tartalmú,
+                        alfanumerikus információ csomag, ami az Ügyfél számítógépén rögzül és előre meghatározott
+                        érvényességi ideig tárolásra kerül. A cookie célja a weboldal megfelelő működésének, az alapvető
+                        és
+                        kényelmi funkcióknak a biztosítása, illetőleg szerepet kap a weboldal biztonságának növelése, a
+                        weboldal fejlesztése és a látogatási statisztikák létrehozása vonatkozásában is. A cookie-k
+                        használata kizárólag akkor történik meg, ha azt az Ügyfél böngészője engedélyezi. Az Ügyfél a
+                        weboldal megnyitásával hozzájárul a cookie-k használatának engedélyezéséhez.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 6. Adatfeldolgozók -->
+            <section>
+                <h2 class="font-serif text-3xl text-ink mb-6">6. Adatfeldolgozók, a személyes adatok megismerésére
+                    jogosultak</h2>
+                <p class="mb-6">A személyes adatok megismerésére az Adatkezelő, illetve az általa igénybe vett
+                    adatfeldolgozók a hatályos jogszabályok szerint jogosultak. Az adatok feldolgozását az Adatkezelő
+                    megbízásából eljáró alábbi adatfeldolgozók végzik:</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                    <div class="bg-white border border-ink/5 p-8">
+                        <h4 class="font-serif text-2xl text-ink mb-4">MORGÓ-Family Bt. (könyvelő)</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><strong class="text-ink font-semibold">Székhely:</strong> 1161 Budapest, Körvasút sor
+                                30. 2. em. 10. ajtó</li>
+                            <li><strong class="text-ink font-semibold">Cégjegyzékszám:</strong> 01-06-784331</li>
+                            <li><strong class="text-ink font-semibold">Adószám:</strong> 23369809-1-42</li>
+                            <li><strong class="text-ink font-semibold">Továbbított adat típusa:</strong> ügyfél neve,
+                                címe, bankszámla adatai.</li>
+                            <li><strong class="text-ink font-semibold">Az adatfeldolgozás célja:</strong> könyvelési
+                                feladatok ellátása.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white border border-ink/5 p-8">
+                        <h4 class="font-serif text-2xl text-ink mb-4">Magyar Hosting Kft. (tárhely)</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><strong class="text-ink font-semibold">Székhely:</strong> 1132 Budapest, Victor Hugo
+                                utca 18-22.</li>
+                            <li><strong class="text-ink font-semibold">Cégjegyzékszám:</strong> 01-09-968314</li>
+                            <li><strong class="text-ink font-semibold">Adószám:</strong> 23495919-2-41</li>
+                            <li><strong class="text-ink font-semibold">Továbbított adat típusa:</strong> ügyfél neve,
+                                e-mail címe</li>
+                            <li><strong class="text-ink font-semibold">Adatkezelés célja:</strong> az Adatkezelő
+                                Weboldalán található üzenetküldő rendszer üzemeltetése</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p class="mt-6 text-sm text-gray-500 italic">Adatkezelő fenntartja a jogot, hogy a jövőben további
+                    adatfeldolgozót vonjon be az adatkezelésbe, amelyről a jelen Szabályzat módosításával tájékoztatja
+                    Ügyfelet.</p>
+            </section>
+
+            <!-- 7. Az Ügyfél jogai -->
+            <section>
+                <h2 class="font-serif text-3xl text-ink mb-6">7. Az Ügyfél jogai</h2>
+                <p class="mb-8">Az Ügyfél kérelmezheti Adatkezelőnél, hogy az adjon tájékoztatást személyes adatai
+                    kezeléséről, kérheti személyes adatainak helyesbítését, valamint kérheti személyes és különleges
+                    adatainak - a kötelező adatkezelés kivételével - törlését vagy zárolását, illetve
+                    adathordozhatóságát.
+                    Alább az érintett egyes jogainak rövid ismertetése:</p>
+
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="font-semibold text-ink uppercase tracking-widest text-xs mb-2">Hozzáférés a személyes
+                            és különleges adatokhoz</h4>
+                        <p>Az Adatkezelő az Ügyfél kérésére tájékoztatást ad arról, hogy személyes adataira vonatkozóan
+                            folytat-e adatkezelést, és hozzáférést ad számára az adatokhoz, díjmentesen rendelkezésre
+                            bocsátva azok másolatát. A határidő a kérelem benyújtásától számított egy hónap.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-ink uppercase tracking-widest text-xs mb-2">Kezelt adatok
+                            helyesbítése</h4>
+                        <p>Az Ügyfél kérelmezheti az Adatkezelőnél pontatlan személyes adatainak helyesbítését, illetve
+                            a
+                            hiányos adatok kiegészítését, melyet az Adatkezelő indokolatlan késedelem nélkül elvégez.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-ink uppercase tracking-widest text-xs mb-2">Kezelt adatok törlése,
+                            zárolása</h4>
+                        <p>Az Ügyfél kérelmezheti adatainak törlését, ha az adatkezelés célja megszűnt, hozzájárulását
+                            visszavonta, tiltakozik a kezelés ellen, vagy jogellenes az adatkezelés (kivéve a jogszabály
+                            által
+                            előírt kötelező adatmegőrzést).</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-ink uppercase tracking-widest text-xs mb-2">Kezelt adatok
+                            korlátozása</h4>
+                        <p>Az Ügyfél jogosult az adatkezelés korlátozását kérni pl. pontatlanság vitatása esetén, vagy
+                            ha
+                            jogellenes az adatkezelés, de ellenzi a törlést.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-ink uppercase tracking-widest text-xs mb-2">Tiltakozáshoz való jog
+                        </h4>
+                        <p>Az Ügyfél tiltakozhat személyes adatának kezelése ellen. Ilyenkor az Adatkezelő az adatokat
+                            nem
+                            kezelheti tovább, kivéve, ha kényszerítő erejű jogos okok indokolják.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. Adatbiztonság -->
+            <section>
+                <h2 class="font-serif text-3xl text-ink mb-4">8. Adatbiztonság</h2>
+                <p class="mb-4">Az Adatkezelő kötelezi magát arra, hogy gondoskodik az adatok biztonságáról, megteszi
+                    azokat
+                    a technikai és szervezési intézkedéseket, amelyek biztosítják, hogy a felvett adatok védettek
+                    legyenek.</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>A papír alapú adathordozók zárható helyiségben kerülnek elhelyezésre.</li>
+                    <li>A számítógépes adathordozók túlfeszültség védelemmel vannak ellátva.</li>
+                    <li>A számítógépes rendszerek tűzfallal és vírusirtóval védettek.</li>
+                    <li>A számítógép felhasználói fiókja jelszóval védett.</li>
+                    <li>Adatkezelő rendelkezik iratmegsemmisítő eszközzel.</li>
+                </ul>
+            </section>
+
+            <!-- 9. Adatvédelmi incidensek -->
+            <section>
+                <h2 class="font-serif text-3xl text-ink mb-4">9. Adatvédelmi incidensek kezelése és bejelentése</h2>
+                <p>Adatvédelmi incidensnek minősül a személyes adatok jogosulatlan hozzáférése, megváltoztatása,
+                    törlése.
+                    Adatkezelő indokolatlan késedelem nélkül, de legkésőbb 72 órával azután, hogy tudomására jutott,
+                    köteles
+                    bejelenteni a NAIH részére, kivéve ha az nem jár kockázattal. Az érintetteket is 72 órán belül
+                    tájékoztatja az Adatkezelő honlapján keresztül. Az incidensekről 5 évig megőrzött nyilvántartást
+                    vezet.</p>
+            </section>
+
+            <!-- 10. Jogérvényesítés -->
+            <section>
+                <h2 class="font-serif text-3xl text-ink mb-6">10. Jogérvényesítési lehetőségek</h2>
+                <p class="mb-8">Amennyiben az Ügyfél úgy érzi, megsértették a személyes adatok védelméhez való jogát, az
+                    alábbi elérhetőségeken tehet panaszt:</p>
+
+                <div class="bg-white border border-ink/5 p-8 mb-8">
+                    <h4 class="font-serif text-2xl text-ink mb-4">Nemzeti Adatvédelmi és Információs Hatóság (NAIH)</h4>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li><strong class="text-ink font-semibold">Székhely:</strong> 1055 Budapest, Falk Miksa utca
+                            9-11.</li>
+                        <li><strong class="text-ink font-semibold">Postacím:</strong> 1363 Budapest, Pf.: 9.</li>
+                        <li><strong class="text-ink font-semibold">Telefon:</strong> +36 (1) 391-1400</li>
+                        <li><strong class="text-ink font-semibold">Honlap:</strong> <a href="http://naih.hu"
+                                target="_blank" class="text-accent hover:text-ink transition-colors">http://naih.hu</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <p><strong class="text-ink">Bírósági jogérvényesítés:</strong> A per elbírálása a törvényszék
+                        hatáskörébe tartozik. A per az érintett lakóhelye vagy tartózkodási helye szerinti törvényszék
+                        előtt is megindítható.</p>
+                    <p><strong class="text-ink">Kártérítés és sérelemdíj:</strong> Jogellenes kezelés esetén az
+                        érintett sérelemdíjat követelhet. Az Adatkezelő mentesül a felelősség alól, ha a kárt az
+                        adatkezelés
+                        körén kívül eső elháríthatatlan ok idézte elő, vagy ha az a károsult szándékos/súlyosan
+                        gondatlan
+                        magatartásából származott.</p>
+                </div>
+            </section>
+
         </div>
+
+        <p class="text-sm text-gray-500 pt-16 mt-16 border-t border-ink/10 text-center">
+            Jelen v2.0. verziószámú Adatkezelési szabályzat <strong class="text-ink">2026. március 01.</strong> napjától
+            hatályos.
+        </p>
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-ink/10 px-6 py-8 md:px-12">
-        <div class="max-w-4xl mx-auto text-xs text-gray-400">
-            <p class="leading-relaxed mb-4">
-                Ezt a honlapot a <strong class="text-ink">Pest Vármegyei Ügyvédi Kamarában</strong> bejegyzett
-                Berényi Kristóf Ügyvédi Iroda tartja fenn az ügyvédekre vonatkozó jogszabályok és belső szabályzatok
-                szerint, melyek az ügyféljogokra vonatkozó tájékoztatással együtt a
-                <a href="https://www.magyarugyvedikamara.hu" target="_blank" rel="noopener"
-                    class="text-accent hover:underline">www.magyarugyvedikamara.hu</a>
-                honlapon találhatóak.
-            </p>
-            <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-4 mt-4">
-                <p class="uppercase tracking-widest">&copy; 2026 Berényi Kristóf Ügyvédi Iroda</p>
-                <div class="flex gap-4 uppercase tracking-widest flex-wrap justify-center md:justify-end">
+    <footer class="border-t border-ink/10 px-6 py-8 md:px-12 bg-paper">
+        <div
+            class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8 text-xs text-gray-400">
+            <div class="max-w-2xl">
+                <p class="leading-relaxed">
+                    Ezt a honlapot a <strong class="text-ink">Pest Vármegyei Ügyvédi Kamarában</strong> bejegyzett
+                    Berényi Kristóf Ügyvédi Iroda tartja fenn az ügyvédekre vonatkozó jogszabályok és belső szabályzatok
+                    szerint, melyek az ügyféljogokra vonatkozó tájékoztatással együtt a
+                    <a href="https://www.magyarugyvedikamara.hu" target="_blank" rel="noopener"
+                        class="text-accent hover:text-ink transition-colors">www.magyarugyvedikamara.hu</a>
+                    honlapon találhatóak.
+                </p>
+            </div>
+
+            <div class="flex flex-col md:items-end gap-2 w-full md:w-auto mt-4 md:mt-0">
+                <p class="uppercase tracking-widest whitespace-nowrap">&copy; 2026 Berényi Kristóf Ügyvédi Iroda</p>
+                <div class="flex gap-4 uppercase tracking-widest flex-wrap">
                     <a href="privacy.html" class="hover:text-ink transition-colors">Adatvédelmi tájékoztató</a>
-                    <a href="adatkezeles.html" class="hover:text-ink transition-colors">Adatkezelési Szabályzat</a>
                 </div>
             </div>
         </div>
