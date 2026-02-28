@@ -155,6 +155,18 @@
         .img-hover-container:hover .img-hover-zoom {
             transform: scale(1.05);
         }
+
+        /* Expertise card expand/collapse easing */
+        .expertise-desc {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+            opacity: 0;
+        }
+
+        .expertise-desc.expertise-open {
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -546,7 +558,7 @@
                     <div class="z-10 relative">
                         <h3 class="font-serif text-3xl md:text-4xl mb-4 text-white" data-i18n="expertise.labor.title">
                             Munkajog</h3>
-                        <p class="text-gray-400 group-hover:text-ink transition-colors max-w-md"
+                        <p class="text-gray-400 group-hover:text-ink transition-colors"
                             data-i18n="expertise.labor.desc">
                             Munkavállalók és munkáltatók teljeskörű jogi képviselete. Munkaszerződések, felmondások,
                             versenytilalmi megállapodások és munkaügyi perek.
@@ -567,7 +579,7 @@
                     <div class="z-10 relative">
                         <h3 class="font-serif text-3xl md:text-4xl mb-4 text-white"
                             data-i18n="expertise.transport.title">Fuvarozási jog</h3>
-                        <p class="text-gray-400 group-hover:text-ink transition-colors max-w-md"
+                        <p class="text-gray-400 group-hover:text-ink transition-colors"
                             data-i18n="expertise.transport.desc">
                             Közúti árufuvarozás és szállítmányozás specifikus jogi kérdései. Szerződések, ÁSZF-ek
                             szerkesztése és kárügyek kezelése.
@@ -583,7 +595,7 @@
                     class="expertise-card group bg-stone-dark p-8 hover:bg-stone-dark/80 transition-colors reveal-text border-t border-white/5 h-full flex flex-col">
                     <h3 class="font-serif text-2xl mb-4 text-white" data-i18n="expertise.transport.title">Fuvarozási jog
                     </h3>
-                    <div class="expertise-desc hidden text-[13px] text-gray-400 leading-relaxed font-sans mb-4"
+                    <div class="expertise-desc text-[13px] text-gray-400 leading-relaxed font-sans mb-4"
                         data-i18n="expertise.transport.desc"></div>
                     <button onclick="toggleExpertise(this)"
                         class="mt-auto flex items-center gap-2 text-accent font-semibold text-xs uppercase tracking-widest hover:text-white transition-colors cursor-pointer hover-trigger">
@@ -596,7 +608,7 @@
                 <div class="expertise-card group bg-stone-dark p-8 hover:bg-stone-dark/80 transition-colors reveal-text border-t border-white/5 h-full flex flex-col"
                     style="transition-delay: 0.1s;">
                     <h3 class="font-serif text-2xl mb-4 text-white" data-i18n="expertise.labor.title">Munkajog</h3>
-                    <div class="expertise-desc hidden text-[13px] text-gray-400 leading-relaxed font-sans mb-4"
+                    <div class="expertise-desc text-[13px] text-gray-400 leading-relaxed font-sans mb-4"
                         data-i18n="expertise.labor.desc"></div>
                     <button onclick="toggleExpertise(this)"
                         class="mt-auto flex items-center gap-2 text-accent font-semibold text-xs uppercase tracking-widest hover:text-white transition-colors cursor-pointer hover-trigger">
@@ -610,7 +622,7 @@
                     style="transition-delay: 0.2s;">
                     <h3 class="font-serif text-2xl mb-4 text-white" data-i18n="expertise.traffic.title">Közlekedési jog
                     </h3>
-                    <div class="expertise-desc hidden text-[13px] text-gray-400 leading-relaxed font-sans mb-4"
+                    <div class="expertise-desc text-[13px] text-gray-400 leading-relaxed font-sans mb-4"
                         data-i18n="expertise.traffic.desc"></div>
                     <button onclick="toggleExpertise(this)"
                         class="mt-auto flex items-center gap-2 text-accent font-semibold text-xs uppercase tracking-widest hover:text-white transition-colors cursor-pointer hover-trigger">
@@ -624,7 +636,7 @@
                     style="transition-delay: 0.3s;">
                     <h3 class="font-serif text-2xl mb-4 text-white" data-i18n="expertise.debt.title">Követeléskezelés
                     </h3>
-                    <div class="expertise-desc hidden text-[13px] text-gray-400 leading-relaxed font-sans mb-4"
+                    <div class="expertise-desc text-[13px] text-gray-400 leading-relaxed font-sans mb-4"
                         data-i18n="expertise.debt.desc"></div>
                     <button onclick="toggleExpertise(this)"
                         class="mt-auto flex items-center gap-2 text-accent font-semibold text-xs uppercase tracking-widest hover:text-white transition-colors cursor-pointer hover-trigger">
@@ -638,7 +650,7 @@
                     class="expertise-card group bg-stone-dark p-8 hover:bg-stone-dark/80 transition-colors reveal-text border-t border-white/5 h-full flex flex-col">
                     <h3 class="font-serif text-2xl mb-4 text-white" data-i18n="expertise.enforcement.title">Végrehajtási
                         jog</h3>
-                    <div class="expertise-desc hidden text-[13px] text-gray-400 leading-relaxed font-sans mb-4"
+                    <div class="expertise-desc text-[13px] text-gray-400 leading-relaxed font-sans mb-4"
                         data-i18n="expertise.enforcement.desc"></div>
                     <button onclick="toggleExpertise(this)"
                         class="mt-auto flex items-center gap-2 text-accent font-semibold text-xs uppercase tracking-widest hover:text-white transition-colors cursor-pointer hover-trigger">
@@ -651,7 +663,7 @@
                 <div class="expertise-card group bg-stone-dark p-8 hover:bg-stone-dark/80 transition-colors reveal-text border-t border-white/5 h-full flex flex-col"
                     style="transition-delay: 0.1s;">
                     <h3 class="font-serif text-2xl mb-4 text-white" data-i18n="expertise.criminal.title">Büntetőjog</h3>
-                    <div class="expertise-desc hidden text-[13px] text-gray-400 leading-relaxed font-sans mb-4"
+                    <div class="expertise-desc text-[13px] text-gray-400 leading-relaxed font-sans mb-4"
                         data-i18n="expertise.criminal.desc"></div>
                     <button onclick="toggleExpertise(this)"
                         class="mt-auto flex items-center gap-2 text-accent font-semibold text-xs uppercase tracking-widest hover:text-white transition-colors cursor-pointer hover-trigger">
@@ -1114,16 +1126,21 @@
             const desc = card.querySelector('.expertise-desc');
             const icon = btn.querySelector('.expertise-icon');
             const label = btn.querySelector('.expertise-label');
-            const isOpen = !desc.classList.contains('hidden');
+            const isOpen = desc.classList.contains('expertise-open');
+            const currentLang = localStorage.getItem('preferredLanguage') || 'hu';
 
             if (isOpen) {
-                desc.classList.add('hidden');
+                desc.style.maxHeight = '0';
+                desc.classList.remove('expertise-open');
                 icon.textContent = '+';
-                icon.style.transform = '';
+                const moreKey = translations[currentLang] && translations[currentLang]['expertise.more'];
+                label.textContent = moreKey || 'Bővebben';
             } else {
-                desc.classList.remove('hidden');
+                desc.classList.add('expertise-open');
+                desc.style.maxHeight = desc.scrollHeight + 'px';
                 icon.textContent = '−';
-                icon.style.transform = '';
+                const closeKey = translations[currentLang] && translations[currentLang]['expertise.close'];
+                label.textContent = closeKey || 'Bezár';
             }
         }
 
