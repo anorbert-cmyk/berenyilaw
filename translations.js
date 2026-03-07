@@ -116,6 +116,10 @@ const translations = {
         "contact.form.message": "Üzenet",
         "contact.form.message_placeholder": "Miben segíthetek?",
         "contact.form.submit": "Üzenet küldése",
+        "contact.form.sending": "Küldés...",
+        "contact.form.success": "Üzenet sikeresen elküldve! Hamarosan felvesszük Önnel a kapcsolatot.",
+        "contact.form.error": "Hiba történt. Kérjük próbálja újra később.",
+        "contact.form.rate_limit": "Kérjük várjon egy percet az újabb üzenet küldése előtt.",
 
         // Footer
         "footer.bar_info": "Ez a honlap a Pest Vármegyei Ügyvédi Kamarába bejegyzett Berényi Kristóf Ügyvédi Iroda tulajdona.",
@@ -240,6 +244,10 @@ const translations = {
         "contact.form.message": "Message",
         "contact.form.message_placeholder": "How can we help you?",
         "contact.form.submit": "Send message",
+        "contact.form.sending": "Sending...",
+        "contact.form.success": "Message sent successfully! We will contact you shortly.",
+        "contact.form.error": "An error occurred. Please try again later.",
+        "contact.form.rate_limit": "Please wait one minute before sending another message.",
 
         // Footer
         "footer.bar_info": "This website is the property of Berényi Kristóf Law Firm, registered with the Pest County Bar Association.",
@@ -364,6 +372,10 @@ const translations = {
         "contact.form.message": "Message",
         "contact.form.message_placeholder": "Comment puis-je vous aider?",
         "contact.form.submit": "Envoyer le message",
+        "contact.form.sending": "Envoi...",
+        "contact.form.success": "Message envoyé avec succès ! Nous vous contacterons sous peu.",
+        "contact.form.error": "Une erreur est survenue. Veuillez réessayer plus tard.",
+        "contact.form.rate_limit": "Veuillez patienter une minute avant d'envoyer un autre message.",
 
         // Footer
         "footer.bar_info": "Ce site web est la propriété du Cabinet Berényi Kristóf, inscrit au Barreau du Comté de Pest.",
