@@ -138,7 +138,7 @@ const translations = {
     },
     en: {
         // Navigation
-        "nav.firm_name": "Berényi Kristóf Ügyvédi Iroda (Cabinet d’Avocat)",
+        "nav.firm_name": "Kristóf Berényi Law Firm",
         "nav.home": "About Us",
         "nav.expertise": "Expertise",
         "nav.team": "Our Team",
@@ -275,7 +275,7 @@ const translations = {
     },
     fr: {
         // Navigation
-        "nav.firm_name": "Berényi Kristóf Ügyvédi Iroda (Cabinet d’Avocat)",
+        "nav.firm_name": "Cabinet d’avocats Kristóf Berényi",
         "nav.home": "Le Cabinet",
         "nav.expertise": "Expertises",
         "nav.team": "L'Équipe",
