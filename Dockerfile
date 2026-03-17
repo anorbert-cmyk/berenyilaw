@@ -6,6 +6,8 @@ COPY nginx.conf.template /etc/nginx/templates/default.conf.template
 # Statikus fájlok másolása
 COPY index.html /usr/share/nginx/html/
 COPY privacy.html /usr/share/nginx/html/
+COPY privacy-en.html /usr/share/nginx/html/
+COPY privacy-fr.html /usr/share/nginx/html/
 COPY send-mail.php /usr/share/nginx/html/
 COPY dr-berenyi-kristof.png /usr/share/nginx/html/
 COPY kristof-ulos.jpg /usr/share/nginx/html/

@@ -740,23 +740,23 @@
                         <!-- Directions Info Box -->
                         <div class="bg-white p-6 border border-ink/5 text-sm space-y-4">
                             <div>
-                                <strong class="block font-serif text-lg mb-2">Megközelítés</strong>
+                                <strong class="block font-serif text-lg mb-2" data-i18n="contact.directions.title">Megközelítés</strong>
                                 <p class="text-gray-500">
-                                    <span class="font-bold text-ink">Kelenföldről:</span> 40, 40B, 40E buszokkal a
-                                    Gimnázium/Budaörsi lakótelep megállótól pár perc séta.
+                                    <span class="font-bold text-ink" data-i18n="contact.directions.kelenfold_label">Kelenföldről:</span>
+                                    <span data-i18n="contact.directions.kelenfold">40, 40B, 40E buszokkal a Gimnázium/Budaörsi lakótelep megállótól pár perc séta.</span>
                                 </p>
                                 <p class="text-gray-500 mt-2">
-                                    <span class="font-bold text-ink">Széll Kálmán térről:</span> 140, 140E buszokkal a
-                                    Gimnázium/Budaörsi lakótelep megállótól pár perc séta.
+                                    <span class="font-bold text-ink" data-i18n="contact.directions.szell_label">Széll Kálmán térről:</span>
+                                    <span data-i18n="contact.directions.szell">140, 140E buszokkal a Gimnázium/Budaörsi lakótelep megállótól pár perc séta.</span>
                                 </p>
                                 <p class="text-gray-500 mt-2">
-                                    <span class="font-bold text-ink">Móricz Zsigmond körtérről:</span> 240 busszal a
-                                    Gimnázium/Budaörsi lakótelep megállótól pár perc séta.
+                                    <span class="font-bold text-ink" data-i18n="contact.directions.moricz_label">Móricz Zsigmond körtérről:</span>
+                                    <span data-i18n="contact.directions.moricz">240 busszal a Gimnázium/Budaörsi lakótelep megállótól pár perc séta.</span>
                                 </p>
                             </div>
                             <div class="border-t border-gray-100 pt-3">
-                                <strong class="block font-serif text-lg mb-1">Parkolás</strong>
-                                <p class="text-gray-500">
+                                <strong class="block font-serif text-lg mb-1" data-i18n="contact.parking.title">Parkolás</strong>
+                                <p class="text-gray-500" data-i18n="contact.parking.desc">
                                     Az iroda előtt a <span class="font-bold text-ink">parkolás ingyenes</span>.
                                 </p>
                             </div>
@@ -820,7 +820,7 @@
             <div
                 class="flex flex-col md:flex-row justify-between items-start mt-24 pt-8 border-t border-ink/10 text-xs text-gray-400">
                 <div class="max-w-2xl mb-6 md:mb-0">
-                    <p class="leading-relaxed">
+                    <p class="leading-relaxed" data-i18n="footer.bar_info">
                         Ezt a honlapot a <strong class="text-ink">Pest Vármegyei Ügyvédi Kamarában</strong> bejegyzett
                         Berényi Kristóf Ügyvédi Iroda tartja fenn az ügyvédekre vonatkozó jogszabályok és belső
                         szabályzatok
@@ -831,7 +831,7 @@
                     </p>
                 </div>
                 <div class="flex flex-col md:items-end gap-2">
-                    <p class="uppercase tracking-widest">&copy; 2026 Berényi Kristóf Ügyvédi Iroda</p>
+                    <p class="uppercase tracking-widest" data-i18n="footer.copyright">&copy; 2026 Berényi Kristóf Ügyvédi Iroda</p>
                     <div class="flex gap-6 uppercase tracking-widest">
                         <a href="privacy.html" class="hover:text-ink transition-colors"
                             data-i18n="footer.privacy">Adatvédelmi tájékoztató</a>
@@ -1058,6 +1058,13 @@
                     element.placeholder = translation;
                 }
             });
+
+            // Update privacy link based on language
+            const privacyLink = document.querySelector('a[href*="privacy"]');
+            if (privacyLink) {
+                const privacyUrls = { hu: 'privacy.html', en: 'privacy-en.html', fr: 'privacy-fr.html' };
+                privacyLink.href = privacyUrls[lang] || 'privacy.html';
+            }
 
             // Save preference
             localStorage.setItem('preferredLanguage', lang);
