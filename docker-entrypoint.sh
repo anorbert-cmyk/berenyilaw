@@ -9,7 +9,9 @@ export PORT
 envsubst '${PORT}' < /etc/nginx/templates/default.conf.template > /etc/nginx/http.d/default.conf
 
 # Start PHP-FPM in the background
-php-fpm -D
+php-fpm -D || { echo "ERROR: php-fpm failed to start"; exit 1; }
+sleep 1
+pgrep php-fpm > /dev/null || { echo "ERROR: php-fpm is not running"; exit 1; }
 
 # Start Nginx in the foreground
 exec nginx -g "daemon off;"

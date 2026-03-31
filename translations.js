@@ -340,7 +340,7 @@ const translations = {
 
         // Kristof
         "team.kristof.name": "Me Kristóf Berényi",
-        "team.kristof.title": "LL.M., spécialiste en droit des transports – avocat dirigeant du cabinet",
+        "team.kristof.title": "LL.M., spécialiste en droit routier – avocat dirigeant du cabinet",
         "team.kristof.short": "Une assistance juridique étendue et une pratique diversifiée au service d'un accompagnement juridique complet. Ses domaines d'intervention comprennent le droit des transports, le droit routier, le droit du travail, le droit pénal, le droit des sociétés et le droit immobilier.",
         "team.kristof.bio.title": "Présentation personnelle",
         "team.kristof.bio.p1": "Permettez-moi de me présenter : je suis Me Kristóf Berényi, avocat et spécialiste en droit des transports. Mes principaux domaines d'activité sont le droit des transports, le droit routier, le droit du travail, le droit pénal ainsi que le droit des sociétés et le droit immobilier.",
