@@ -37,6 +37,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Fonts: Playfair Display (Elegancia) & Manrope (Modernitás) -->
+    <link rel="preconnect" href="https://unpkg.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -44,7 +45,7 @@
         rel="stylesheet">
 
     <!-- Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@0.344.0"></script>
     <script src="translations.js?v=2"></script>
 
     <script>
@@ -77,7 +78,13 @@
     </script>
 
     <style>
-        /* Egyedi görgetősáv */
+        /* Egyedi görgetősáv — Firefox */
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: #d1d1d1 #F3F2EE;
+        }
+
+        /* Egyedi görgetősáv — Webkit */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -172,6 +179,8 @@
 
 <body class="bg-paper text-ink font-sans antialiased selection:bg-accent selection:text-white overflow-x-hidden">
 
+    <noscript><div style="padding:2rem;text-align:center;">Az oldal működéséhez JavaScript szükséges. / JavaScript is required.</div></noscript>
+
     <!-- Custom Cursor -->
     <div class="cursor-dot hidden md:block"></div>
     <div class="cursor-outline hidden md:block"></div>
@@ -180,7 +189,7 @@
     <nav class="fixed w-full z-50 px-6 py-4 md:px-12 md:py-6 flex justify-between items-center bg-paper/95 backdrop-blur-sm text-ink transition-colors duration-300"
         id="navbar">
         <a href="#" class="flex items-center gap-3 hover-trigger z-50">
-            <img src="logo.png" alt="Berényi Kristóf Ügyvédi Iroda logó" class="h-14 md:h-16 w-auto">
+            <img src="logo.png" alt="Berényi Kristóf Ügyvédi Iroda logó" class="h-14 md:h-16 w-auto" width="64" height="64">
             <span class="hidden md:block text-sm font-semibold tracking-wide uppercase"
                 data-i18n="nav.firm_name">Berényi Kristóf Ügyvédi
                 Iroda</span>
@@ -224,7 +233,7 @@
             <i data-lucide="menu" class="w-8 h-8 transition-opacity duration-300" id="menu-icon-open"></i>
             <i data-lucide="x" class="w-8 h-8 absolute opacity-0 scale-75 transition-all duration-300"
                 id="menu-icon-close"></i>
-            </div>
+        </button>
     </nav>
 
     <!-- Mobile Menu Overlay (outside nav to avoid mix-blend-difference) -->
@@ -353,7 +362,7 @@
             <div class="md:col-span-5 reveal-text md:sticky top-32">
                 <div class="w-full aspect-[3/4] img-hover-container relative bg-gray-200">
                     <img src="kristof-ulos.jpg" alt="Dr. Berényi Kristóf ügyvéd, közlekedési szakjogász portréja"
-                        loading="lazy"
+                        loading="lazy" width="600" height="800"
                         class="w-full h-full object-cover object-center img-hover-zoom grayscale hover:grayscale-0 transition-all duration-700">
                     <div
                         class="absolute bottom-4 left-4 bg-paper px-4 py-2 text-xs font-bold uppercase tracking-widest">
@@ -441,7 +450,7 @@
                 <!-- Dr. Berényi Kristóf - Irodavezető -->
                 <article class="reveal-text" style="transition-delay: 0.1s;">
                     <div class="w-full aspect-[4/5] img-hover-container relative bg-gray-200 mb-6">
-                        <img src="berenyi-kristof.jpg" loading="lazy"
+                        <img src="berenyi-kristof.jpg" loading="lazy" width="600" height="750"
                             alt="Dr. Berényi Kristóf LL.M., közlekedési szakjogász portréfotója"
                             class="w-full h-full object-cover object-top img-hover-zoom grayscale hover:grayscale-0 transition-all duration-700">
                     </div>
@@ -490,6 +499,7 @@
                 <article class="reveal-text" style="transition-delay: 0.2s;">
                     <div class="w-full aspect-[4/5] img-hover-container relative bg-gray-200 mb-6">
                         <img src="csorba-dorottya.jpg" alt="Dr. Csorba Dorottya ügyvédjelölt portréfotója"
+                            loading="lazy" width="600" height="750"
                             class="w-full h-full object-cover object-top img-hover-zoom grayscale hover:grayscale-0 transition-all duration-700">
                     </div>
                     <div class="mb-3">
@@ -773,6 +783,8 @@
                         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                         <!-- Időalapú spam védelem -->
                         <input type="hidden" name="_timestamp" id="_timestamp">
+                        <!-- CSRF token -->
+                        <input type="hidden" name="_csrf" id="csrf-token" value="">
 
                         <div>
                             <label for="name"
@@ -796,6 +808,7 @@
                                 class="block text-xs font-bold uppercase tracking-widest mb-2 text-gray-500"
                                 data-i18n="contact.form.phone">Telefon</label>
                             <input type="tel" name="phone" id="phone"
+                                pattern="[\+]?[0-9\s\-\(\)]{6,20}"
                                 class="w-full bg-paper border-b border-gray-300 p-3 focus:outline-none focus:border-accent transition-colors"
                                 placeholder="+36..." data-i18n-placeholder="contact.form.phone_placeholder">
                         </div>
@@ -896,35 +909,48 @@
         // Lucide icons initialization
         lucide.createIcons();
 
-        // Custom Cursor Logic
+        // Custom Cursor Logic — skip on touch devices
+        const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
         const cursorDot = document.querySelector('.cursor-dot');
         const cursorOutline = document.querySelector('.cursor-outline');
-        const hoverTriggers = document.querySelectorAll('.hover-trigger');
 
-        window.addEventListener('mousemove', (e) => {
-            const posX = e.clientX;
-            const posY = e.clientY;
+        if (!isTouchDevice && cursorDot && cursorOutline) {
+            const hoverTriggers = document.querySelectorAll('.hover-trigger');
 
-            // Dot follows instantly
-            cursorDot.style.left = `${posX}px`;
-            cursorDot.style.top = `${posY}px`;
+            window.addEventListener('mousemove', (e) => {
+                const posX = e.clientX;
+                const posY = e.clientY;
 
-            // Outline follows with slight delay
-            cursorOutline.animate({
-                left: `${posX}px`,
-                top: `${posY}px`
-            }, { duration: 500, fill: "forwards" });
-        });
+                // Dot follows instantly
+                cursorDot.style.left = `${posX}px`;
+                cursorDot.style.top = `${posY}px`;
 
-        // Add hover effect to interactive elements
-        hoverTriggers.forEach(trigger => {
-            trigger.addEventListener('mouseenter', () => {
-                cursorOutline.classList.add('hovered');
+                // Outline follows with slight delay
+                if (cursorOutline.animate) {
+                    cursorOutline.animate({
+                        left: `${posX}px`,
+                        top: `${posY}px`
+                    }, { duration: 500, fill: "forwards" });
+                } else {
+                    cursorOutline.style.left = `${posX}px`;
+                    cursorOutline.style.top = `${posY}px`;
+                }
             });
-            trigger.addEventListener('mouseleave', () => {
-                cursorOutline.classList.remove('hovered');
+
+            // Add hover effect to interactive elements
+            hoverTriggers.forEach(trigger => {
+                trigger.addEventListener('mouseenter', () => {
+                    cursorOutline.classList.add('hovered');
+                });
+                trigger.addEventListener('mouseleave', () => {
+                    cursorOutline.classList.remove('hovered');
+                });
             });
-        });
+        } else if (cursorDot && cursorOutline) {
+            // Hide custom cursor on touch devices
+            cursorDot.style.display = 'none';
+            cursorOutline.style.display = 'none';
+        }
 
         // Intersection Observer for Scroll Reveals
         const observerOptions = {
@@ -945,17 +971,24 @@
             observer.observe(el);
         });
 
-        // Navbar scroll effect
+        // Navbar scroll effect (throttled with rAF)
+        let scrollTicking = false;
+        const nav = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                nav.classList.add('bg-paper/90', 'backdrop-blur-sm', 'shadow-sm');
-                nav.classList.remove('py-8');
-                nav.classList.add('py-4');
-            } else {
-                nav.classList.remove('bg-paper/90', 'backdrop-blur-sm', 'shadow-sm');
-                nav.classList.add('py-8');
-                nav.classList.remove('py-4');
+            if (!scrollTicking) {
+                requestAnimationFrame(() => {
+                    if (window.scrollY > 50) {
+                        nav.classList.add('bg-paper/90', 'backdrop-blur-sm', 'shadow-sm');
+                        nav.classList.remove('py-8');
+                        nav.classList.add('py-4');
+                    } else {
+                        nav.classList.remove('bg-paper/90', 'backdrop-blur-sm', 'shadow-sm');
+                        nav.classList.add('py-8');
+                        nav.classList.remove('py-4');
+                    }
+                    scrollTicking = false;
+                });
+                scrollTicking = true;
             }
         });
 
@@ -1073,6 +1106,7 @@
 
         // Helper to get nested object property by string path
         function getNestedTranslation(obj, path) {
+            if (!obj || !path) return null;
             // First try direct access for flat keys (e.g., "nav.home")
             if (obj[path]) {
                 return obj[path];
@@ -1156,6 +1190,18 @@
             const tsField = document.getElementById('_timestamp');
             if (tsField) tsField.value = Math.floor(Date.now() / 1000);
 
+            const csrfField = document.getElementById('_csrf_token');
+
+            // CSRF token lekérés
+            async function fetchCsrfToken() {
+                try {
+                    const res = await fetch('send-mail.php?csrf_token=1');
+                    const data = await res.json();
+                    if (csrfField && data.csrf_token) csrfField.value = data.csrf_token;
+                } catch (e) { /* silent fail */ }
+            }
+            fetchCsrfToken();
+
             const form = document.getElementById('contact-form');
             if (!form) return;
 
@@ -1188,6 +1234,9 @@
                         method: 'POST',
                         body: new FormData(form)
                     });
+                    if (!response.ok) {
+                        throw new Error('HTTP ' + response.status);
+                    }
                     const result = await response.json();
 
                     if (result.success) {
@@ -1195,6 +1244,8 @@
                         form.reset();
                         // Timestamp újra beállítás a reset után
                         tsField.value = Math.floor(Date.now() / 1000);
+                        // CSRF token újra lekérés (single-use token)
+                        fetchCsrfToken();
                     } else {
                         showStatus('error', result.message);
                     }

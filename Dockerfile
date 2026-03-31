@@ -1,9 +1,16 @@
-FROM nginx:alpine
+FROM php:8.3-fpm-alpine
 
-# Nginx konfig template másolás
+# Install Nginx and required PHP extensions
+RUN apk add --no-cache nginx msmtp gettext && \
+    docker-php-ext-install opcache
+
+# Create required directories
+RUN mkdir -p /run/nginx /var/log/nginx
+
+# Copy Nginx config template
 COPY nginx.conf.template /etc/nginx/templates/default.conf.template
 
-# Statikus fájlok másolása
+# Copy all site files
 COPY index.html /usr/share/nginx/html/
 COPY privacy.html /usr/share/nginx/html/
 COPY privacy-en.html /usr/share/nginx/html/
@@ -17,6 +24,11 @@ COPY logo.png /usr/share/nginx/html/
 COPY translations.js /usr/share/nginx/html/
 COPY office-bg.jpg /usr/share/nginx/html/
 
-# Expose a Railway-féle dinamikus port
+# Copy entrypoint script
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
+
+# Expose the dynamic port (Railway)
 EXPOSE $PORT
-# Build timestamp: Tue Jan 27 23:49:15 CET 2026
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
