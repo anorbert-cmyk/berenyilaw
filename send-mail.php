@@ -36,29 +36,11 @@ $email_subject_prefix = "[Weboldal] ";
 // JSON response
 header('Content-Type: application/json; charset=UTF-8');
 
-// CSRF token generálás GET kérésre (AJAX token lekérés)
-if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["csrf_token"])) {
-    if (empty($_SESSION['csrf_token'])) {
-        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-    }
-    echo json_encode(['csrf_token' => $_SESSION['csrf_token']]);
-    exit;
-}
-
 // Csak POST kéréseket fogadunk
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     echo json_encode(['success' => false, 'message' => 'Érvénytelen kérés.']);
     exit;
 }
-
-// CSRF token ellenőrzés
-$submitted_token = isset($_POST["_csrf_token"]) ? $_POST["_csrf_token"] : "";
-if (empty($submitted_token) || empty($_SESSION['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $submitted_token)) {
-    echo json_encode(['success' => false, 'message' => 'Érvénytelen biztonsági token. Kérjük frissítse az oldalt és próbálja újra.']);
-    exit;
-}
-// CSRF token felhasználás után újragenerálás (single-use token)
-unset($_SESSION['csrf_token']);
 
 // Honeypot spam védelem - ha ki van töltve, bot
 if (!empty($_POST["_honey"])) {
@@ -66,13 +48,15 @@ if (!empty($_POST["_honey"])) {
     exit;
 }
 
-// Időalapú spam védelem - 3 mp-nél gyorsabb kitöltés = bot
-if (isset($_POST["_timestamp"])) {
-    $elapsed = time() - intval($_POST["_timestamp"]);
-    if ($elapsed < 3) {
-        echo json_encode(['success' => true, 'message' => 'Üzenet elküldve!']);
-        exit;
-    }
+// Időalapú spam védelem - hiányzó vagy 3 mp-nél gyorsabb kitöltés = bot
+if (!isset($_POST["_timestamp"]) || !is_numeric($_POST["_timestamp"])) {
+    echo json_encode(['success' => true, 'message' => 'Üzenet elküldve!']);
+    exit;
+}
+$elapsed = time() - intval($_POST["_timestamp"]);
+if ($elapsed < 3) {
+    echo json_encode(['success' => true, 'message' => 'Üzenet elküldve!']);
+    exit;
 }
 
 // Rate limiting - session alapon, 60 mp-enként max 1 üzenet
@@ -114,7 +98,8 @@ if (!empty($errors)) {
 }
 
 // Email összeállítása
-$subject = $email_subject_prefix . "Új megkeresés: " . $name;
+$safe_name = str_replace(["\r", "\n", "%0a", "%0d"], '', $name);
+$subject = $email_subject_prefix . "Új megkeresés: " . $safe_name;
 
 $body = "
 Új megkeresés érkezett a weboldalról.
@@ -136,7 +121,7 @@ $message
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Küldve: " . date("Y-m-d H:i:s") . "
-IP cím: " . $_SERVER["REMOTE_ADDR"] . "
+IP cím: " . (isset($_SERVER["HTTP_X_FORWARDED_FOR"]) ? explode(',', $_SERVER["HTTP_X_FORWARDED_FOR"])[0] : $_SERVER["REMOTE_ADDR"]) . "
 ";
 
 // Email fejlécek

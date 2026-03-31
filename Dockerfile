@@ -28,7 +28,7 @@ COPY office-bg.jpg /usr/share/nginx/html/
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh
 
-# Expose the dynamic port (Railway)
-EXPOSE $PORT
+# Default port (Railway overrides via $PORT env var at runtime)
+EXPOSE 8080
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
