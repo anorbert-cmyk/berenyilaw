@@ -5,11 +5,41 @@ server {
     root /usr/share/nginx/html;
     index index.html;
 
+    # Security headers
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-XSS-Protection "1; mode=block" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+
+    # Static file locations
     location / {
         try_files $uri $uri/ /index.html;
     }
 
-    # Gzip tömörítés
+    # PHP-FPM handling
+    location ~ \.php$ {
+        try_files $uri =404;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+
+    # Cache control for static assets (images, JS, CSS) — 30 days
+    location ~* \.(jpg|jpeg|png|gif|ico|svg|webp|css|js)$ {
+        expires 30d;
+        add_header Cache-Control "public, no-transform";
+
+        # Re-add security headers (add_header in a location block
+        # overrides the server-level add_header directives)
+        add_header X-Frame-Options "SAMEORIGIN" always;
+        add_header X-Content-Type-Options "nosniff" always;
+        add_header X-XSS-Protection "1; mode=block" always;
+        add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+    }
+
+    # Gzip compression
     gzip on;
     gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript image/svg+xml;
 }
