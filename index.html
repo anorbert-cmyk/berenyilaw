@@ -790,9 +790,6 @@
                         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                         <!-- Időalapú spam védelem -->
                         <input type="hidden" name="_timestamp" id="_timestamp">
-                        <!-- CSRF token -->
-                        <input type="hidden" name="_csrf_token" id="_csrf_token" value="">
-
                         <div>
                             <label for="name"
                                 class="block text-xs font-bold uppercase tracking-widest mb-2 text-gray-500"
@@ -1194,18 +1191,6 @@
             const tsField = document.getElementById('_timestamp');
             if (tsField) tsField.value = Math.floor(Date.now() / 1000);
 
-            const csrfField = document.getElementById('_csrf_token');
-
-            // CSRF token lekérés
-            async function fetchCsrfToken() {
-                try {
-                    const res = await fetch('send-mail.php?csrf_token=1');
-                    const data = await res.json();
-                    if (csrfField && data.csrf_token) csrfField.value = data.csrf_token;
-                } catch (e) { /* silent fail */ }
-            }
-            fetchCsrfToken();
-
             const form = document.getElementById('contact-form');
             if (!form) return;
 
@@ -1252,8 +1237,6 @@
                         form.reset();
                         // Timestamp újra beállítás a reset után
                         tsField.value = Math.floor(Date.now() / 1000);
-                        // CSRF token újra lekérés (single-use token)
-                        fetchCsrfToken();
                     } else {
                         showStatus('error', result.message);
                     }

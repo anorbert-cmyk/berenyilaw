@@ -36,29 +36,11 @@ $email_subject_prefix = "[Weboldal] ";
 // JSON response
 header('Content-Type: application/json; charset=UTF-8');
 
-// CSRF token generálás GET kérésre (AJAX token lekérés)
-if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["csrf_token"])) {
-    if (empty($_SESSION['csrf_token'])) {
-        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-    }
-    echo json_encode(['csrf_token' => $_SESSION['csrf_token']]);
-    exit;
-}
-
 // Csak POST kéréseket fogadunk
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     echo json_encode(['success' => false, 'message' => 'Érvénytelen kérés.']);
     exit;
 }
-
-// CSRF token ellenőrzés
-$submitted_token = isset($_POST["_csrf_token"]) ? $_POST["_csrf_token"] : "";
-if (empty($submitted_token) || empty($_SESSION['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $submitted_token)) {
-    echo json_encode(['success' => false, 'message' => 'Érvénytelen biztonsági token. Kérjük frissítse az oldalt és próbálja újra.']);
-    exit;
-}
-// CSRF token felhasználás után újragenerálás (single-use token)
-unset($_SESSION['csrf_token']);
 
 // Honeypot spam védelem - ha ki van töltve, bot
 if (!empty($_POST["_honey"])) {
